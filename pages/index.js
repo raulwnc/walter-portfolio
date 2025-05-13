@@ -80,7 +80,7 @@ export default function Home() {
       {/* Presentations Section */}
       <section id="presentations" className="bg-gray-50 py-16 px-4 sm:px-6 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-8 text-center">Speaking & Presentations</h2>
+          <h2 className="text-2xl font-semibold mb-8 text-center">Presentations</h2>
           <ul className="list-disc list-inside space-y-4 text-sm text-gray-700">
             <li><strong>Capstone:</strong> The Future is Remote — FDA Guidance & Regulatory Strategy for RPM in Drug Research (April 2025)</li>
             <li><strong>Seminar:</strong> AI in Drug Regulatory Decision-Making — Applicability in Drug Development (March 2025)</li>
