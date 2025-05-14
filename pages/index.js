@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 sm:py-20 px-4 sm:px-6 md:px-8 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Tech-Driven Pharmacy</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Tech-Driven Pharmacist</h1>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Human-Centered Innovation</h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
           Harnessing clinical insight to build digital health solutions that matter.
