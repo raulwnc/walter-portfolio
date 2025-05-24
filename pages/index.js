@@ -36,6 +36,13 @@ export default function Home() {
       {/* About Me */}
       <section id="about" className="max-w-3xl mx-auto py-16 px-4 sm:px-6 md:px-8">
         <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+      <div className="flex justify-center mb-6">
+  <img
+    src="/walter-og.png"
+    alt="Walter Nieves-Canabal"
+    className="w-32 h-32 rounded-full object-cover shadow-md"
+  />
+</div>
         <p className="mb-4">
           I’m a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
         </p>
