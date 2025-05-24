@@ -38,7 +38,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">About Me</h2>
       <div className="flex justify-center mb-6">
   <img
-    src="/walter-og.png"
+    src="/walter-headshot.png"
     alt="Walter Nieves-Canabal"
     className="w-32 h-32 rounded-full object-cover shadow-md"
   />
