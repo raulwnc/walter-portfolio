@@ -41,6 +41,7 @@ export default function App({ Component, pageProps }) {
           content="Tech-forward pharmacy student building the future of healthcare access and innovation."
         />
         <meta name="twitter:image" content="https://walter-portfolio-theta.vercel.app/walter-og.png" />
+      <meta name="color-scheme" content="light" />
       </Head>
       <Component {...pageProps} />
     </>

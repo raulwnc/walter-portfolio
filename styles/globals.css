@@ -1,29 +1,17 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* ✅ Remove this block entirely to stop automatic dark mode */
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-*/
-
+/* Hardcode light mode everywhere */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #ffffff !important;
+  color: #171717 !important;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Prevent dark-mode overrides on all elements */
+* {
+  background-color: inherit !important;
+  color: inherit !important;
+  box-shadow: inherit !important;
+  border-color: inherit !important;
 }
