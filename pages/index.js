@@ -12,6 +12,7 @@ export default function Home() {
             <li><a href="#presentations" className="hover:text-blue-600">Presentations</a></li>
             <li><a href="#leadership" className="hover:text-blue-600">Leadership</a></li>
             <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
+            <li><a href="#references" className="hover:text-blue-600">References</a></li>
           </ul>
         </div>
       </nav>
