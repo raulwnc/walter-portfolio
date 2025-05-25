@@ -64,6 +64,9 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-2">Script Your Future</h3>
               <p className="text-sm text-gray-700">Led a digital campaign reaching 10,000+ individuals to improve hypertension awareness, medication adherence, and patient empowerment through social outreach and education.</p>
             </div>
+            <div className="bg-white border border-dashed border-gray-300 p-6 rounded-lg text-center text-gray-500 italic">
+  🚧 Innovation Project Coming Soon — Watch this space.
+</div>
           </div>
         </div>
       </section>
@@ -145,6 +148,9 @@ export default function Home() {
           rel="noopener noreferrer"
         >Download CV (PDF)</a>
       </p>
+      <p className="mt-6 text-sm text-gray-700 italic">
+  I’m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!
+</p>
     </div>
 
     {/* References Info */}
