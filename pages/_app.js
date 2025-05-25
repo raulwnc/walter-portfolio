@@ -41,6 +41,23 @@ export default function App({ Component, pageProps }) {
           content="Tech-forward pharmacy student building the future of healthcare access and innovation."
         />
         <meta name="twitter:image" content="https://walter-portfolio-theta.vercel.app/walter-og.png" />
+
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Walter Nieves-Canabal",
+      "jobTitle": "PharmD Candidate",
+      "url": "https://walter-portfolio-theta.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/walter-nieves-canabal/"
+      ]
+    })
+  }}
+/>
+
       </Head>
       <Component {...pageProps} />
     </>
