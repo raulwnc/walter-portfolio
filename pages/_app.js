@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Walter Nieves-Canabal | PharmD Portfolio" />
         <meta property="og:description" content="Tech-forward pharmacy student building the future of healthcare access and innovation." />
-        <meta property="og:image" content="https://walternieves.com/walter-og.png" />
+        <meta property="og:image" content="https://walternieves.com/preview-walter.png" />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:url" content="https://walternieves.com" />
         <meta name="twitter:title" content="Walter Nieves-Canabal | PharmD Portfolio" />
         <meta name="twitter:description" content="Tech-forward pharmacy student building the future of healthcare access and innovation." />
-        <meta name="twitter:image" content="https://walternieves.com/walter-og.png" />
+        <meta name="twitter:image" content="https://walternieves.com/preview-walter.png" />
 
         {/* Structured Data for SEO */}
         <script
