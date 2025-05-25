@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
           property="og:description"
           content="Tech-forward pharmacy student building the future of healthcare access and innovation."
         />
-        <meta property="og:image" content="https://walternieves.com" />
+        <meta property="og:image" content="https://walternieves.com/walter-og.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
