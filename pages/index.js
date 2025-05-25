@@ -122,28 +122,54 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="bg-gray-100 py-16 px-4 sm:px-6 md:px-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-          <p className="mb-2">Email: <a className="text-blue-600 hover:underline" href="mailto:wrn9@pitt.edu">wrn9@pitt.edu</a></p>
-          <p className="mb-2">
-            LinkedIn: <a
-              className="text-blue-600 hover:underline"
-              href="https://www.linkedin.com/in/walter-nieves-canabal/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >This will take you to my LinkedIn profile</a>
-          </p>
-          <p>
-            CV: <a
-              className="text-blue-600 hover:underline"
-              href="/CV_Walter_Nieves_Canabal_2025.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-            >Download CV (PDF)</a>
-          </p>
-        </div>
-      </section>
+  <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+    {/* Contact Info */}
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+      <p className="mb-2">Email: <a className="text-blue-600 hover:underline" href="mailto:wrn9@pitt.edu">wrn9@pitt.edu</a></p>
+      <p className="mb-2">
+        LinkedIn: <a
+          className="text-blue-600 hover:underline"
+          href="https://www.linkedin.com/in/walter-nieves-canabal/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >This will take you to my LinkedIn profile</a>
+      </p>
+      <p>
+        CV: <a
+          className="text-blue-600 hover:underline"
+          href="/CV_Walter_Nieves_Canabal_2025.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+        >Download CV (PDF)</a>
+      </p>
+    </div>
+
+    {/* References Info */}
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">References</h2>
+      <ul className="space-y-4 text-sm text-gray-700">
+        <li>
+          <strong>Dr. Ashley Yarabinec, PharmD</strong><br />
+          <a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a>
+        </li>
+        <li>
+          <strong>Dr. Christian Fernandez, PhD</strong><br />
+          <a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a>
+        </li>
+        <li>
+          <strong>Marijke Koppenol-Raab</strong><br />
+          <a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a>
+        </li>
+        <li>
+          <strong>Suzanne Mannino</strong><br />
+          <a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="text-center text-xs text-gray-500 py-4">
