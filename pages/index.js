@@ -148,27 +148,27 @@ export default function Home() {
     </div>
 
     {/* References Info */}
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">References</h2>
-      <ul className="space-y-4 text-sm text-gray-700">
-        <li>
-          <strong>Dr. Ashley Yarabinec, PharmD</strong><br />
-          <a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a>
-        </li>
-        <li>
-          <strong>Dr. Christian Fernandez, PhD</strong><br />
-          <a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a>
-        </li>
-        <li>
-          <strong>Marijke Koppenol-Raab</strong><br />
-          <a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a>
-        </li>
-        <li>
-          <strong>Suzanne Mannino</strong><br />
-          <a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a>
-        </li>
-      </ul>
-    </div>
+<div id="references">
+  <h2 className="text-2xl font-semibold mb-4">References</h2>
+  <ul className="space-y-4 text-sm text-gray-700">
+    <li>
+      <strong>Dr. Ashley Yarabinec, PharmD</strong><br />
+      <a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a>
+    </li>
+    <li>
+      <strong>Dr. Christian Fernandez, PhD</strong><br />
+      <a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a>
+    </li>
+    <li>
+      <strong>Marijke Koppenol-Raab</strong><br />
+      <a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a>
+    </li>
+    <li>
+      <strong>Suzanne Mannino</strong><br />
+      <a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a>
+    </li>
+  </ul>
+</div>
   </div>
 </section>
 
