@@ -28,9 +28,9 @@ export default function Custom404() {
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-md sm:text-lg text-gray-600 max-w-xl mb-8"
       >
-        This page doesn't exist — but innovation happens in the unexpected.
-        Whether it's remote monitoring, rare disease access, or building tech for better outcomes,
-        you're one click away from getting back on track.
+        This page doesn&apos;t exist — but innovation happens in the unexpected.
+        Whether it&apos;s remote monitoring, rare disease access, or building tech for better outcomes,
+        you&apos;re one click away from getting back on track.
       </motion.p>
 
       <motion.div
