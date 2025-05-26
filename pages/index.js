@@ -132,12 +132,12 @@ export default function Home() {
       <h2 className="text-2xl font-semibold mb-4">Contact</h2>
       <p className="mb-2">Email: <a className="text-blue-600 hover:underline" href="mailto:wrn9@pitt.edu">wrn9@pitt.edu</a></p>
       <p className="mb-2">
-        LinkedIn: <a
-          className="text-blue-600 hover:underline"
-          href="https://www.linkedin.com/in/walter-nieves-canabal/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >This will take you to my LinkedIn profile</a>
+        <a
+  className="text-blue-600 hover:underline"
+  href="https://www.linkedin.com/in/walter-nieves-canabal/"
+  target="_blank"
+  rel="noopener noreferrer"
+>LinkedIn</a>:
       </p>
       <p>
         CV: <a
