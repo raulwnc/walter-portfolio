@@ -16,10 +16,18 @@ export default function Custom404() {
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="text-2xl font-semibold mb-2"
+      >
+        You’ve wandered outside the treatment plan 🚧
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         className="text-md sm:text-lg text-gray-600 max-w-xl mb-8"
       >
-        404: You’ve wandered outside the treatment plan 🚧.
         Let&apos;s get you back on track.
       </motion.p>
 
