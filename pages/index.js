@@ -137,7 +137,7 @@ export default function Home() {
   href="https://www.linkedin.com/in/walter-nieves-canabal/"
   target="_blank"
   rel="noopener noreferrer"
->LinkedIn</a>:
+>LinkedIn</a>
       </p>
       <p>
         CV: <a
