@@ -7,14 +7,14 @@ export default function Home() {
       <nav className="bg-gray-100 border-b border-gray-200 px-4 sm:px-6 md:px-8 py-4 sticky top-0 z-50">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
           <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
-          <ul className="flex flex-wrap justify-center gap-4 text-sm font-medium">
-            <li><ScrollLink to="about" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">About</ScrollLink></li>
-            <li><ScrollLink to="projects" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">Projects</ScrollLink></li>
-            <li><ScrollLink to="research" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">Research</ScrollLink></li>
-            <li><ScrollLink to="presentations" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">Presentations</ScrollLink></li>
-            <li><ScrollLink to="leadership" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">Leadership</ScrollLink></li>
-            <li><ScrollLink to="contact" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">Contact</ScrollLink></li>
-            <li><ScrollLink to="references" smooth={true} duration={500} offset={-80} className="cursor-pointer hover:text-blue-600">References</ScrollLink></li>
+          <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-sm sm:text-base font-medium">
+            <li><ScrollLink to="about" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">About</ScrollLink></li>
+            <li><ScrollLink to="projects" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Projects</ScrollLink></li>
+            <li><ScrollLink to="research" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Research</ScrollLink></li>
+            <li><ScrollLink to="presentations" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Presentations</ScrollLink></li>
+            <li><ScrollLink to="leadership" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Leadership</ScrollLink></li>
+            <li><ScrollLink to="contact" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Contact</ScrollLink></li>
+            <li><ScrollLink to="references" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">References</ScrollLink></li>
           </ul>
         </div>
       </nav>

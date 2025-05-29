@@ -11,3 +11,10 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+.active-nav-link {
+  color: #2563eb; /* text-blue-600 */
+  font-weight: 500; /* font-medium */
+  border-bottom: 2px solid #2563eb;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
