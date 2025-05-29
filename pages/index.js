@@ -28,7 +28,7 @@ export default function Home() {
         </p>
         <div className="flex justify-center items-center gap-2 mt-4">
           <img
-            src="/puerto-rico-flag.png"
+            src="/puerto-rico-flag.webp"
             alt="Puerto Rico Flag"
             className="w-5 sm:w-6 h-auto rounded shadow"
           />
@@ -42,10 +42,12 @@ export default function Home() {
     <h2 className="text-2xl font-semibold mb-4">About Me</h2>
     <div className="flex justify-center mb-6">
       <img
-        src="/walter-headshot.png"
-        alt="Walter Nieves-Canabal"
-        className="w-32 h-32 rounded-full object-cover shadow-md"
-      />
+  src="/walter-headshot.webp"  
+  alt="Walter Nieves-Canabal"
+  width={128}  
+  height={128}
+  className="w-32 h-32 rounded-full object-cover shadow-md"
+/>
     </div>
   </div>
   <p className="mb-4">
