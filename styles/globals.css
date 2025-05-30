@@ -1,20 +1,41 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
+/* Body styles */
 body {
-  @apply bg-white text-gray-800 font-sans;
+  background-color: #fff;
+  color: #1f2937;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Link styles */
 a {
-  @apply text-blue-600 hover:underline;
+  color: #2563eb;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
 }
 
+/* Mobile adjustments */
+@media (max-width: 639px) {
+  html {
+    scroll-padding-top: 120px;
+  }
+}
+
+/* Active nav link */
 .active-nav-link {
-  color: #2563eb; /* text-blue-600 */
-  font-weight: 500; /* font-medium */
+  color: #2563eb;
+  font-weight: 500;
   border-bottom: 2px solid #2563eb;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
