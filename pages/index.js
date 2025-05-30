@@ -1,23 +1,47 @@
+import { useState } from 'react';
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Navigation Bar */}
       <nav className="bg-gray-100 border-b border-gray-200 px-4 sm:px-6 md:px-8 py-4 sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-          <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
-          <ul className="flex flex-wrap justify-center gap-2 sm:gap-4 text-sm sm:text-base font-medium">
-            <li><ScrollLink to="about" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">About</ScrollLink></li>
-            <li><ScrollLink to="projects" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Projects</ScrollLink></li>
-            <li><ScrollLink to="research" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Research</ScrollLink></li>
-            <li><ScrollLink to="presentations" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Presentations</ScrollLink></li>
-            <li><ScrollLink to="leadership" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Leadership</ScrollLink></li>
-            <li><ScrollLink to="contact" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">Contact</ScrollLink></li>
-            <li><ScrollLink to="references" smooth={true} duration={500} offset={-80} activeClass="active-nav-link" className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors">References</ScrollLink></li>
-          </ul>
-        </div>
-      </nav>
+  <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+    {/* Name + Hamburger Button */}
+    <div className="flex items-center justify-between w-full sm:w-auto">
+      <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
+      <button 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="sm:hidden p-2 rounded-md text-gray-500 hover:text-gray-800 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        {/* Hamburger icon SVG */}
+      </button>
+    </div>
+
+    {/* Navigation Links */}
+    <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:flex w-full sm:w-auto mt-4 sm:mt-0`}>
+      <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium">
+        {['about', 'projects', 'research', 'presentations', 'leadership', 'contact', 'references'].map((item) => (
+          <li key={item} className="w-full sm:w-auto">
+            <ScrollLink
+              to={item}
+              smooth={true}
+              duration={500}
+              offset={-80}
+              activeClass="active-nav-link"
+              className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </ScrollLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div> {/* This closes the max-w-5xl div */}
+</nav> {/* This closes the nav */}
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 sm:py-20 px-4 sm:px-6 md:px-8 text-center">
