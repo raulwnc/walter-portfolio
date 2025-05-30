@@ -13,9 +13,14 @@ export default function Home() {
       <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
       <button 
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="sm:hidden p-2 rounded-md text-gray-500 hover:text-gray-800 focus:outline-none"
+        className="sm:hidden p-2 bg-gray-200 rounded-md text-gray-800 focus:outline-none"
         aria-label="Toggle menu"
       >
+        {isMenuOpen ? (
+      <span className="text-xl">✕</span>  // Close icon
+    ) : (
+      <span className="text-xl">☰</span>  // Hamburger icon
+    )}
         {/* Hamburger icon SVG */}
       </button>
     </div>
