@@ -1,8 +1,63 @@
-import { useState } from 'react';
-import { Link as ScrollLink } from "react-scroll";
+import { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  useEffect(() => {
+    // Close the menu when the screen is resized to desktop size
+    if (!isMobile) {
+      setIsMenuOpen(false);
+    }
+  }, [isMobile]);
+  // Close the menu when a link is clicked
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
+  // Close the menu when the user clicks outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('.nav-menu')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+  // Close the menu when the user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMenuOpen]);
+  // Close the menu when the user clicks the hamburger button
+  const handleHamburgerClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
       {/* Navigation Bar */}
@@ -34,9 +89,9 @@ export default function Home() {
               to={item}
               smooth={true}
               duration={500}
-              offset={-80}
+              offset={isMobile ? -120 : -80}  // Adjust this value
               activeClass="active-nav-link"
-              className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block"
+              className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
