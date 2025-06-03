@@ -1,9 +1,9 @@
-import "../styles/globals.css";
+import '../styles/globals.css';
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <div className="bg-white text-gray-800 font-sans">
       <Head>
         {/* HTML Meta Tags */}
         <title>Walter Nieves-Canabal | PharmD Portfolio</title>
@@ -45,6 +45,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }
+

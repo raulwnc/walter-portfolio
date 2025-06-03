@@ -1,109 +1,83 @@
 import { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
-
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
   useEffect(() => {
-    // Close the menu when the screen is resized to desktop size
-    if (!isMobile) {
-      setIsMenuOpen(false);
-    }
+    if (!isMobile) setIsMenuOpen(false);
   }, [isMobile]);
-  // Close the menu when a link is clicked
-  const handleLinkClick = () => {
-    if (isMobile) {
-      setIsMenuOpen(false);
-    }
-  };
-  // Close the menu when the user clicks outside of it
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.nav-menu')) {
-        setIsMenuOpen(false);
-      }
-    };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isMenuOpen]);
-  // Close the menu when the user scrolls
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isMenuOpen]);
-  // Close the menu when the user clicks the hamburger button
-  const handleHamburgerClick = () => {
+  // Simple toggle function
+  const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Simplified scroll function - no conflicting event listeners
+  const scrollToSection = (sectionId) => {
+    // Close menu immediately
+    setIsMenuOpen(false);
+    
+    // Small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Get the actual nav height dynamically
+        const navElement = document.querySelector('nav');
+        const navHeight = navElement ? navElement.offsetHeight : 0;
+        
+        // Add extra padding for better positioning
+        const extraPadding = isMobile ? 20 : 10;
+        const elementPosition = element.offsetTop - navHeight - extraPadding;
+        
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: 'smooth'
+        });
+      }
+    }, 150); // Slightly longer delay
+  };
+
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans">
-      {/* Navigation Bar */}
       <nav className="bg-gray-100 border-b border-gray-200 px-4 sm:px-6 md:px-8 py-4 sticky top-0 z-50">
-  <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-    {/* Name + Hamburger Button */}
-    <div className="flex items-center justify-between w-full sm:w-auto">
-      <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
-      <button 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="sm:hidden p-2 bg-gray-200 rounded-md text-gray-800 focus:outline-none"
-        aria-label="Toggle menu"
-      >
-        {isMenuOpen ? (
-      <span className="text-xl">✕</span>  // Close icon
-    ) : (
-      <span className="text-xl">☰</span>  // Hamburger icon
-    )}
-        {/* Hamburger icon SVG */}
-      </button>
-    </div>
-
-    {/* Navigation Links */}
-    <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:flex w-full sm:w-auto mt-4 sm:mt-0`}>
-      <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium">
-        {['about', 'projects', 'research', 'presentations', 'leadership', 'contact', 'references'].map((item) => (
-          <li key={item} className="w-full sm:w-auto">
-            <ScrollLink
-              to={item}
-              smooth={true}
-              duration={500}
-              offset={isMobile ? -120 : -80}  // Adjust this value
-              activeClass="active-nav-link"
-              className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+          <div className="flex items-center justify-between w-full sm:w-auto">
+            <span className="text-xl font-bold text-blue-600">Walter Nieves-Canabal</span>
+            <button 
+              onClick={toggleMenu}
+              className="sm:hidden p-2 bg-gray-200 rounded-md text-gray-800 focus:outline-none"
+              aria-label="Toggle menu"
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </ScrollLink>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div> {/* This closes the max-w-5xl div */}
-</nav> {/* This closes the nav */}
-
-      {/* Hero Section */}
+              {isMenuOpen ? <span className="text-xl">✕</span> : <span className="text-xl">☰</span>}
+            </button>
+          </div>
+          <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:flex w-full sm:w-auto mt-4 sm:mt-0 nav-menu`}>
+            <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium bg-gray-100 sm:bg-transparent p-4 sm:p-0 rounded-lg sm:rounded-none">
+              {['about', 'projects', 'research', 'presentations', 'leadership', 'contact', 'references'].map((item) => (
+                <li key={item} className="w-full sm:w-auto">
+                  <button
+                    onClick={() => scrollToSection(item)}
+                    className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block w-full sm:w-auto text-center sm:text-left bg-transparent border-none text-inherit font-inherit text-sm hover:bg-gray-200 sm:hover:bg-transparent rounded"
+                  >
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
       <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 sm:py-20 px-4 sm:px-6 md:px-8 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Tech-Driven Pharmacist</h1>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Human-Centered Innovation</h1>
@@ -111,165 +85,120 @@ export default function Home() {
           Harnessing clinical insight to build digital health solutions that matter.
         </p>
         <div className="flex justify-center items-center gap-2 mt-4">
-          <img
-            src="/puerto-rico-flag.webp"
-            alt="Puerto Rico Flag"
-            className="w-5 sm:w-6 h-auto rounded shadow"
-          />
+          <img src="/puerto-rico-flag.webp" alt="Puerto Rico Flag" className="w-5 sm:w-6 h-auto rounded shadow" />
           <span className="text-sm text-gray-600 italic">Proudly Puerto Rican</span>
         </div>
       </section>
 
-      {/* About Me */}
       <section id="about" className="max-w-3xl mx-auto py-16 px-4 sm:px-6 md:px-8">
-  <div className="text-center">
-    <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-    <div className="flex justify-center mb-6">
-      <img
-  src="/walter-headshot.webp"  
-  alt="Walter Nieves-Canabal"
-  width={128}  
-  height={128}
-  className="w-32 h-32 rounded-full object-cover shadow-md"
-/>
-    </div>
-  </div>
-  <p className="mb-4">
-    I’m a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
-  </p>
-</section>
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+          <div className="flex justify-center mb-6">
+            <img src="/walter-headshot.webp" alt="Walter Nieves-Canabal" width={128} height={128} className="w-32 h-32 rounded-full object-cover shadow-md" />
+          </div>
+        </div>
+        <div className="prose prose-blue">
+          <p>
+            I'm a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
+          </p>
+        </div>
+      </section>
 
-      {/* Projects Section */}
       <section id="projects" className="bg-gray-50 py-16 px-4 sm:px-6 md:px-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto prose prose-blue">
           <h2 className="text-2xl font-semibold mb-8 text-center">Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-white border border-gray-200 p-6 rounded-lg shadow hover:shadow-md transition">
               <h3 className="text-lg font-bold mb-2">Pharmacy Tech Innovation Lab</h3>
-              <p className="text-sm text-gray-700">Leading the design and implementation of a pharmacist-centered digital tool that integrates biometric data to support clinical insight and patient engagement. Focused on enhancing decision-making and workflow efficiency through real-time, data-informed interventions.</p>
+              <p>Leading the design and implementation of a pharmacist-centered digital tool that integrates biometric data to support clinical insight and patient engagement.</p>
             </div>
             <div className="bg-white border border-gray-200 p-6 rounded-lg shadow hover:shadow-md transition">
               <h3 className="text-lg font-bold mb-2">Script Your Future</h3>
-              <p className="text-sm text-gray-700">Led a digital campaign reaching 10,000+ individuals to improve hypertension awareness, medication adherence, and patient empowerment through social outreach and education.</p>
+              <p>Led a digital campaign reaching 10,000+ individuals to improve hypertension awareness, medication adherence, and patient empowerment through social outreach and education.</p>
             </div>
             <div className="bg-white border border-dashed border-gray-300 p-6 rounded-lg text-center text-gray-500 italic">
-  🚧 Innovation Project Coming Soon — Watch this space.
-</div>
+              🚧 Innovation Project Coming Soon — Watch this space.
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Research Section */}
-      <section id="research" className="max-w-5xl mx-auto py-16 px-4 sm:px-6 md:px-8">
+      <section id="research" className="max-w-5xl mx-auto py-16 px-4 sm:px-6 md:px-8 prose prose-blue">
         <h2 className="text-2xl font-semibold mb-8 text-center">Research & Innovation</h2>
         <div className="space-y-6">
           <div>
             <h3 className="text-lg font-bold">Virtual Reality & Pharmacy Education</h3>
-            <p className="text-sm text-gray-700">Developed and tested VR modules (SimX) to improve counseling, experiential learning, and clinical decision-making. Presented at the 2024 Health Disparities & Social Justice Poster Competition.</p>
+            <p>Developed and tested VR modules (SimX) to improve counseling, experiential learning, and clinical decision-making.</p>
           </div>
           <div>
             <h3 className="text-lg font-bold">FDA Fellowship</h3>
-            <p className="text-sm text-gray-700">Translated regulatory data into visual insights; co-led an initiative enhancing industry understanding of regulatory frameworks.</p>
+            <p>Translated regulatory data into visual insights; co-led an initiative enhancing industry understanding of regulatory frameworks.</p>
           </div>
           <div>
             <h3 className="text-lg font-bold">Drug Metabolism Research</h3>
-            <p className="text-sm text-gray-700">Analyzed PEG-ASNase’s impact on cytochrome P450 and phase II enzymes to inform medical communication strategies.</p>
+            <p>Analyzed PEG-ASNase's impact on cytochrome P450 and phase II enzymes to inform medical communication strategies.</p>
           </div>
         </div>
       </section>
 
-      {/* Presentations Section */}
       <section id="presentations" className="bg-gray-50 py-16 px-4 sm:px-6 md:px-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto prose prose-blue">
           <h2 className="text-2xl font-semibold mb-8 text-center">Presentations</h2>
-          <ul className="list-disc list-inside space-y-4 text-sm text-gray-700">
+          <ul className="list-disc list-inside space-y-4">
             <li><strong>Capstone:</strong> The Future is Remote — FDA Guidance & Regulatory Strategy for RPM in Drug Research (April 2025)</li>
             <li><strong>Seminar:</strong> AI in Drug Regulatory Decision-Making — Applicability in Drug Development (March 2025)</li>
           </ul>
         </div>
       </section>
 
-      {/* Leadership Section */}
-      <section id="leadership" className="max-w-5xl mx-auto py-16 px-4 sm:px-6 md:px-8">
+      <section id="leadership" className="max-w-5xl mx-auto py-16 px-4 sm:px-6 md:px-8 prose prose-blue">
         <h2 className="text-2xl font-semibold mb-8 text-center">Leadership Experience</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
             <h3 className="text-lg font-bold mb-2">RxAmbassador Program</h3>
-            <p className="text-sm text-gray-700">Co-President — leading outreach and mentorship efforts for future pharmacy students while representing Pitt Pharmacy nationally.</p>
+            <p>Co-President — leading outreach and mentorship efforts for future pharmacy students.</p>
           </div>
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
-            <h3 className="text-lg font-bold mb-2">APhA Academy of Student Pharmacists (APhA-ASP)</h3>
-            <p className="text-sm text-gray-700">International Vice President — promoting global collaboration among pharmacy students and leading national representation efforts.</p>
+            <h3 className="text-lg font-bold mb-2">APhA-ASP</h3>
+            <p>International Vice President — promoting global collaboration among pharmacy students.</p>
           </div>
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
-            <h3 className="text-lg font-bold mb-2">Phi Delta Chi Pharmacy Fraternity</h3>
-            <p className="text-sm text-gray-700">Treasurer — managing organizational finances and leading initiatives to promote professional brotherhood and community engagement.</p>
+            <h3 className="text-lg font-bold mb-2">Phi Delta Chi</h3>
+            <p>Treasurer — managing finances and promoting professional brotherhood.</p>
           </div>
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
-            <h3 className="text-lg font-bold mb-2">ALPFA (Association of Latino Professionals For America)</h3>
-            <p className="text-sm text-gray-700">Vice President — driving DEI efforts and professional development programming for Latino students across the University of Pittsburgh.</p>
+            <h3 className="text-lg font-bold mb-2">ALPFA</h3>
+            <p>Vice President — driving DEI efforts and professional programming for Latino students.</p>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="bg-gray-100 py-16 px-4 sm:px-6 md:px-8">
-  <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-    {/* Contact Info */}
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-      <p className="mb-2">Email: <a className="text-blue-600 hover:underline" href="mailto:wrn9@pitt.edu">wrn9@pitt.edu</a></p>
-      <p className="mb-2">
-        <a
-  className="text-blue-600 hover:underline"
-  href="https://www.linkedin.com/in/walter-nieves-canabal/"
-  target="_blank"
-  rel="noopener noreferrer"
->LinkedIn</a>
-      </p>
-      <p>
-        CV: <a
-          className="text-blue-600 hover:underline"
-          href="/CV_Walter_Nieves_Canabal_2025.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-        >Download CV (PDF)</a>
-      </p>
-      <p className="mt-6 text-sm text-gray-700 italic">
-  I’m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!
-</p>
-    </div>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="prose prose-blue">
+            <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+            <p>Email: <a href="mailto:wrn9@pitt.edu" className="text-blue-600 hover:underline">wrn9@pitt.edu</a></p>
+            <p><a href="https://www.linkedin.com/in/walter-nieves-canabal/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p>CV: <a href="/CV_Walter_Nieves_Canabal_2025.pdf" className="text-blue-600 hover:underline" download target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
+            <p className="mt-6 italic">I'm always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
+          </div>
 
-    {/* References Info */}
-<div id="references">
-  <h2 className="text-2xl font-semibold mb-4">References</h2>
-  <ul className="space-y-4 text-sm text-gray-700">
-    <li>
-      <strong>Dr. Ashley Yarabinec, PharmD</strong><br />
-      <a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a>
-    </li>
-    <li>
-      <strong>Dr. Christian Fernandez, PhD</strong><br />
-      <a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a>
-    </li>
-    <li>
-      <strong>Marijke Koppenol-Raab</strong><br />
-      <a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a>
-    </li>
-    <li>
-      <strong>Suzanne Mannino</strong><br />
-      <a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a>
-    </li>
-  </ul>
-</div>
-  </div>
-</section>
+          <div id="references" className="prose prose-blue">
+            <h2 className="text-2xl font-semibold mb-4">References</h2>
+            <ul className="space-y-4">
+              <li><strong>Dr. Ashley Yarabinec, PharmD</strong><br /><a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a></li>
+              <li><strong>Dr. Christian Fernandez, PhD</strong><br /><a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a></li>
+              <li><strong>Marijke Koppenol-Raab</strong><br /><a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a></li>
+              <li><strong>Suzanne Mannino</strong><br /><a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      {/* Footer */}
       <footer className="text-center text-xs text-gray-500 py-4">
         &copy; 2025 Walter Nieves-Canabal | Built with 💻 + 🧠
       </footer>
     </main>
   );
 }
+
