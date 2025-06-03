@@ -99,7 +99,7 @@ export default function Home() {
         </div>
         <div className="prose prose-blue">
           <p>
-            I'm a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
+            I&apos;m a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
           </p>
         </div>
       </section>
@@ -180,7 +180,7 @@ export default function Home() {
             <p>Email: <a href="mailto:wrn9@pitt.edu" className="text-blue-600 hover:underline">wrn9@pitt.edu</a></p>
             <p><a href="https://www.linkedin.com/in/walter-nieves-canabal/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
             <p>CV: <a href="/CV_Walter_Nieves_Canabal_2025.pdf" className="text-blue-600 hover:underline" download target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
-            <p className="mt-6 italic">I'm always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
+            <p className="mt-6 italic">I&apos;m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
           </div>
 
           <div id="references" className="prose prose-blue">
