@@ -110,7 +110,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-white border border-gray-200 p-6 rounded-lg shadow hover:shadow-md transition">
               <h3 className="text-lg font-bold mb-2">Pharmacy Tech Innovation Lab</h3>
-              <p>Leading the design and implementation of a pharmacist-centered digital tool that integrates biometric data to support clinical insight and patient engagement.</p>
+              <p>Leading the design and implementation of a pharmacist-centered digital tool that integrates biometric data to support clinical insight and patient engagement. Focused on enhancing decision-making and workflow efficiency through real-time, data-informed interventions.</p>
             </div>
             <div className="bg-white border border-gray-200 p-6 rounded-lg shadow hover:shadow-md transition">
               <h3 className="text-lg font-bold mb-2">Script Your Future</h3>
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
           <div>
             <h3 className="text-lg font-bold">Drug Metabolism Research</h3>
-            <p>Analyzed PEG-ASNase's impact on cytochrome P450 and phase II enzymes to inform medical communication strategies.</p>
+            <p>Analyzed PEG-ASNase&apos;s impact on cytochrome P450 and phase II enzymes to inform medical communication strategies.</p>
           </div>
         </div>
       </section>
