@@ -64,7 +64,7 @@ export default function Home() {
           </div>
           <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:flex w-full sm:w-auto mt-4 sm:mt-0 nav-menu`}>
             <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium bg-gray-100 sm:bg-transparent p-4 sm:p-0 rounded-lg sm:rounded-none">
-              {['about', 'projects', 'research', 'presentations', 'leadership', 'contact', 'references'].map((item) => (
+              {['about', 'projects', 'research', 'presentations', 'leadership', 'contact'].map((item) => (
                 <li key={item} className="w-full sm:w-auto">
                   <button
                     onClick={() => scrollToSection(item)}
