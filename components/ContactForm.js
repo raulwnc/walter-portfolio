@@ -53,7 +53,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-lg">
+    <div id="contact-form" className="bg-white border border-gray-200 p-6 rounded-lg shadow-lg">
       <h3 className="text-xl font-bold mb-4 text-gray-900">Send Me a Message</h3>
       <p className="text-gray-600 mb-6">
         I&apos;d love to hear your thoughts, feedback, or suggestions about my portfolio!

@@ -64,17 +64,27 @@ export default function Home() {
           </div>
           <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:flex w-full sm:w-auto mt-4 sm:mt-0 nav-menu`}>
             <ul className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-sm font-medium bg-gray-100 sm:bg-transparent p-4 sm:p-0 rounded-lg sm:rounded-none">
-              {['about', 'projects', 'research', 'presentations', 'leadership', 'contact'].map((item) => (
-                <li key={item} className="w-full sm:w-auto">
-                  <button
-                    onClick={() => scrollToSection(item)}
-                    className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block w-full sm:w-auto text-center sm:text-left bg-transparent border-none text-inherit font-inherit text-sm hover:bg-gray-200 sm:hover:bg-transparent rounded"
-                  >
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </button>
-                </li>
-              ))}
-            </ul>
+  {['about', 'projects', 'research', 'presentations', 'leadership', 'contact'].map((item) => (
+    <li key={item} className="w-full sm:w-auto">
+      <button
+        onClick={() => scrollToSection(item)}
+        className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block w-full sm:w-auto text-center sm:text-left bg-transparent border-none text-inherit font-inherit text-sm hover:bg-gray-200 sm:hover:bg-transparent rounded"
+      >
+        {item.charAt(0).toUpperCase() + item.slice(1)}
+      </button>
+    </li>
+  ))}
+  
+  {/* Mobile-only contact form link */}
+  <li className="w-full sm:hidden">
+    <button
+      onClick={() => scrollToSection('contact-form')}
+      className="cursor-pointer hover:text-blue-600 px-3 py-2 transition-colors block w-full text-center bg-blue-50 border border-blue-200 text-blue-700 font-medium text-sm hover:bg-blue-100 rounded"
+    >
+      📝 Send Me a Message
+    </button>
+  </li>
+</ul>
           </div>
         </div>
       </nav>
