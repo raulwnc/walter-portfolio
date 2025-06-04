@@ -182,7 +182,7 @@ export default function Home() {
             {/* Existing Contact Info */}
             <div className="prose prose-blue">
               <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
-              <p>Email: <a href="mailto:wrn9@pitt.edu" className="text-blue-600 hover:underline">wrn9@pitt.edu</a></p>
+              <p>Email: <a href="mailto:raulwnc@gmail.com" className="text-blue-600 hover:underline">raulwnc@gmail.com</a></p>
               <p><a href="https://www.linkedin.com/in/walter-nieves-canabal/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
               <p>CV: <a href="/CV_Walter_Nieves_Canabal_2025.pdf" className="text-blue-600 hover:underline" download target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
               <p className="mt-6 italic">I&apos;m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
