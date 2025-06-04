@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ContactForm from '../components/ContactForm';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -174,23 +175,34 @@ export default function Home() {
       </section>
 
       <section id="contact" className="bg-gray-100 py-16 px-4 sm:px-6 md:px-8">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div className="prose prose-blue">
-            <h2 className="text-2xl font-semibold mb-4">Contact</h2>
-            <p>Email: <a href="mailto:wrn9@pitt.edu" className="text-blue-600 hover:underline">wrn9@pitt.edu</a></p>
-            <p><a href="https://www.linkedin.com/in/walter-nieves-canabal/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-            <p>CV: <a href="/CV_Walter_Nieves_Canabal_2025.pdf" className="text-blue-600 hover:underline" download target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
-            <p className="mt-6 italic">I&apos;m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Contact</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Existing Contact Info */}
+            <div className="prose prose-blue">
+              <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
+              <p>Email: <a href="mailto:wrn9@pitt.edu" className="text-blue-600 hover:underline">wrn9@pitt.edu</a></p>
+              <p><a href="https://www.linkedin.com/in/walter-nieves-canabal/" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+              <p>CV: <a href="/CV_Walter_Nieves_Canabal_2025.pdf" className="text-blue-600 hover:underline" download target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
+              <p className="mt-6 italic">I&apos;m always excited to connect with others passionate about pharmacy, tech, and innovation — feel free to reach out!</p>
+              
+              {/* References moved here */}
+              <div className="mt-8">
+                <h3 className="text-xl font-semibold mb-4">References</h3>
+                <ul className="space-y-3">
+                  <li><strong>Dr. Ashley Yarabinec, PharmD</strong><br /><a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a></li>
+                  <li><strong>Dr. Christian Fernandez, PhD</strong><br /><a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a></li>
+                  <li><strong>Marijke Koppenol-Raab</strong><br /><a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a></li>
+                  <li><strong>Suzanne Mannino</strong><br /><a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a></li>
+                </ul>
+              </div>
+            </div>
 
-          <div id="references" className="prose prose-blue">
-            <h2 className="text-2xl font-semibold mb-4">References</h2>
-            <ul className="space-y-4">
-              <li><strong>Dr. Ashley Yarabinec, PharmD</strong><br /><a href="mailto:aby12@pitt.edu" className="text-blue-600 hover:underline">aby12@pitt.edu</a></li>
-              <li><strong>Dr. Christian Fernandez, PhD</strong><br /><a href="mailto:chf63@pitt.edu" className="text-blue-600 hover:underline">chf63@pitt.edu</a></li>
-              <li><strong>Marijke Koppenol-Raab</strong><br /><a href="mailto:Marijke.Koppenol-Raab@fda.hhs.gov" className="text-blue-600 hover:underline">Marijke.Koppenol-Raab@fda.hhs.gov</a></li>
-              <li><strong>Suzanne Mannino</strong><br /><a href="mailto:smm198@pitt.edu" className="text-blue-600 hover:underline">smm198@pitt.edu</a></li>
-            </ul>
+            {/* Contact Form */}
+            <div>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
