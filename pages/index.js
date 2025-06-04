@@ -108,11 +108,11 @@ export default function Home() {
             <img src="/walter-headshot.webp" alt="Walter Nieves-Canabal" width={128} height={128} className="w-32 h-32 rounded-full object-cover shadow-md" />
           </div>
         </div>
-        <div className="prose prose-blue">
-          <p>
-            I&apos;m a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
-          </p>
-        </div>
+        <div className="prose prose-blue max-w-none text-center">
+  <p className="text-center">
+    I&apos;m a rising third-year PharmD student at the University of Pittsburgh, blending clinical insight with a passion for tech innovation. I bring a unique lens to pharmacy and digital health solutions.
+  </p>
+</div>
       </section>
 
       <section id="projects" className="bg-gray-50 py-16 px-4 sm:px-6 md:px-8">
