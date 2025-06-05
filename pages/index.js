@@ -174,7 +174,7 @@ export default function Home() {
             <p>International Vice President — promoting global collaboration among pharmacy students.</p>
           </div>
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
-            <h3 className="text-lg font-bold mb-2">Phi Delta Chi</h3>
+            <h3 className="text-lg font-bold mb-2">Phi Delta Chi: Mu Chapter</h3>
             <p>Treasurer — managing finances and promoting professional brotherhood.</p>
           </div>
           <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
