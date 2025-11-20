@@ -155,7 +155,7 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
             >
               <span aria-hidden="true">💬</span>
-              Let's Connect
+              Connect with Me!
             </motion.a>
           </motion.div>
         </motion.div>

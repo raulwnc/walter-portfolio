@@ -101,7 +101,7 @@ const Contact = () => {
 
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-200">
                 <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  Let's Connect!
+                  Connect with Me!
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Whether you are interested in discussing digital health innovation, exploring 
