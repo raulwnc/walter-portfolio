@@ -461,34 +461,15 @@ export const LEADERSHIP = [
     organization: 'APhA-ASP (American Pharmacists Association)',
     position: 'International Vice President',
     period: '2024 - Present',
-    description: 'Promoting global collaboration among pharmacy students and facilitating international partnerships.',
+    description: 'Promoting advocacy and collaboration among pharmacy students.',
     responsibilities: [
-      'Facilitate international student partnerships',
       'Coordinate global health initiatives',
-      'Organize international conferences and exchanges',
-      'Promote cross-cultural professional development',
-      'Build relationships with international pharmacy organizations'
+      'Organize tabling events and presentations',
+      'Promote cultural professional development'
     ],
     impact: 'Connected 100+ pharmacy students across 5 countries',
     icon: '🌍',
     color: 'green'
-  },
-  {
-    id: 'phi-delta-chi',
-    organization: 'Phi Delta Chi Pharmacy Fraternity: Mu Chapter',
-    position: 'Treasurer',
-    period: '2024 - Present',
-    description: 'Managing chapter finances, overseeing fundraising initiatives, and supporting professional development programs.',
-    responsibilities: [
-      'Manage chapter budget and financial planning',
-      'Oversee fundraising initiatives and revenue generation',
-      'Ensure fiscal responsibility and transparency',
-      'Support professional development programs',
-      'Track and report financial metrics to chapter leadership'
-    ],
-    impact: 'Maintained balanced budget while funding 15+ chapter events annually',
-    icon: '💼',
-    color: 'purple'
   },
   {
     id: 'alpfa',
@@ -503,7 +484,7 @@ export const LEADERSHIP = [
       'Create networking events for Latino students',
       'Promote career development in healthcare and business'
     ],
-    impact: 'Grew membership by 60% and secured partnerships with 3 major companies',
+    impact: 'Grew membership by 60%',
     icon: '🤝',
     color: 'orange'
   },
@@ -512,14 +493,14 @@ export const LEADERSHIP = [
     organization: 'Professional Development Administration',
     position: 'Student Administrator',
     period: '2024 - Present',
-    description: 'Supporting professional development initiatives and administrative operations for pharmacy student organizations.',
+    description: 'Supporting professional development initiatives and administrative operations for pharmacy students.',
     responsibilities: [
       'Coordinate professional development events',
       'Support administrative operations',
-      'Facilitate student organization collaboration',
-      'Assist with strategic planning initiatives'
+      'Assist with strategic planning initiatives',
+      'Promote student advisor opportunities across the school'
     ],
-    impact: 'Enhanced coordination across multiple student organizations',
+    impact: 'Enhanced student participation in professional development events',
     icon: '📋',
     color: 'blue'
   }
