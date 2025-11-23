@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   email: 'wrn9@pitt.edu',
   phone: '939-226-4301',
   linkedin: 'https://www.linkedin.com/in/walter-nieves-canabal/',
-  cv: '/Walter_Nieves_Canabal_CV.pdf',
+  cv: '/CV_Walter_Nieves_Canabal_2025.pdf',
   location: 'Pittsburgh, PA',
   school: 'University of Pittsburgh',
   year: 'PharmD Candidate, Expected April 2027',
@@ -563,7 +563,7 @@ export const SOCIAL_LINKS = [
 export const CTA = {
   primary: {
     text: 'Download CV',
-    link: '/Walter_Nieves_Canabal_CV.pdf',
+    link: '/CV_Walter_Nieves_Canabal_2025.pdf',
     icon: '📄'
   },
   secondary: {
