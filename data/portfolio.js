@@ -536,6 +536,7 @@ export const REFERENCES = [
 // Navigation Items  
 export const NAV_ITEMS = [
   { id: 'about', label: 'About', icon: '👤' },
+  { id: 'skills-dashboard', label: 'Skills', icon: '⚡' },
   { id: 'experience', label: 'Experience', icon: '💼' },
   { id: 'research', label: 'Research', icon: '🔬' },
   { id: 'presentations', label: 'Presentations', icon: '🎤' },

@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import SkillsDashboard from '../components/SkillsDashboard';
 import Experience from '../components/Experience';
 import Research from '../components/Research';
 import Presentations from '../components/Presentations';
@@ -15,6 +16,7 @@ export default function Home() {
 
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
+  const [skillsRef, skillsInView] = useInView({ threshold: 0.3 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.3 });
   const [researchRef, researchInView] = useInView({ threshold: 0.3 });
   const [presentationsRef, presentationsInView] = useInView({ threshold: 0.3 });
@@ -24,12 +26,13 @@ export default function Home() {
   useEffect(() => {
     if (heroInView) setActiveSection('hero');
     else if (aboutInView) setActiveSection('about');
+    else if (skillsInView) setActiveSection('skills-dashboard');
     else if (experienceInView) setActiveSection('experience');
     else if (researchInView) setActiveSection('research');
     else if (presentationsInView) setActiveSection('presentations');
     else if (leadershipInView) setActiveSection('leadership');
     else if (contactInView) setActiveSection('contact');
-  }, [heroInView, aboutInView, experienceInView, researchInView, presentationsInView, leadershipInView, contactInView]);
+  }, [heroInView, aboutInView, skillsInView, experienceInView, researchInView, presentationsInView, leadershipInView, contactInView]);
 
   return (
     <>
@@ -38,6 +41,7 @@ export default function Home() {
       <main id="main-content" className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
         <div ref={heroRef}><Hero /></div>
         <div ref={aboutRef}><About /></div>
+        <div ref={skillsRef}><SkillsDashboard /></div>
         <div ref={experienceRef}><Experience /></div>
         <div ref={researchRef}><Research /></div>
         <div ref={presentationsRef}><Presentations /></div>
