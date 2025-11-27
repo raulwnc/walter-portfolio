@@ -77,61 +77,6 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Skills Grid */}
-          <motion.div variants={ANIMATION_VARIANTS.fadeInUp}>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 text-center">
-              Skills & Expertise
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Clinical Skills */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-shadow duration-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl" aria-hidden="true">💊</span>
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100">Clinical</h4>
-                </div>
-                <ul className="space-y-2">
-                  {ABOUT.skills.clinical.map((skill) => (
-                    <li key={skill} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                      <span className="text-blue-600 dark:text-blue-400 mt-1" aria-hidden="true">•</span>
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Technical Skills */}
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-shadow duration-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl" aria-hidden="true">💻</span>
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100">Technical</h4>
-                </div>
-                <ul className="space-y-2">
-                  {ABOUT.skills.technical.map((skill) => (
-                    <li key={skill} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                      <span className="text-purple-600 dark:text-purple-400 mt-1" aria-hidden="true">•</span>
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tools */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 rounded-xl border border-green-200 dark:border-green-700 hover:shadow-lg transition-shadow duration-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl" aria-hidden="true">🛠️</span>
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100">Tools</h4>
-                </div>
-                <ul className="space-y-2">
-                  {ABOUT.skills.tools.map((tool) => (
-                    <li key={tool} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                      <span className="text-green-600 dark:text-green-400 mt-1" aria-hidden="true">•</span>
-                      {tool}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
