@@ -14,13 +14,13 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 py-20 sm:py-32 px-4 sm:px-6 md:px-8 overflow-hidden"
+      className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950/30 dark:via-gray-900 dark:to-purple-950/30 py-20 sm:py-32 px-4 sm:px-6 md:px-8 overflow-hidden"
     >
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 dark:bg-purple-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 dark:bg-pink-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-4000" />
       </div>
 
       <div className="relative max-w-5xl mx-auto text-center">
@@ -32,21 +32,21 @@ const Hero = () => {
         >
           <motion.h1
             variants={ANIMATION_VARIANTS.fadeInDown}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-3"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-gray-100 mb-3"
           >
             {PERSONAL_INFO.tagline}
           </motion.h1>
 
           <motion.h2
             variants={ANIMATION_VARIANTS.fadeInDown}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-6"
           >
             {PERSONAL_INFO.subtitle}
           </motion.h2>
 
           <motion.p
             variants={ANIMATION_VARIANTS.fadeInUp}
-            className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             {PERSONAL_INFO.description}
           </motion.p>
@@ -65,7 +65,7 @@ const Hero = () => {
                 priority
               />
             </div>
-            <span className="text-sm sm:text-base text-gray-600 font-medium italic">
+            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium italic">
               {PERSONAL_INFO.heritage}
             </span>
           </motion.div>
@@ -80,7 +80,7 @@ const Hero = () => {
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 dark:bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -90,7 +90,7 @@ const Hero = () => {
 
             <motion.button
               onClick={() => scrollToSection(CTA.secondary.link)}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-semibold rounded-lg border-2 border-blue-600 dark:border-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -113,7 +113,7 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
-              className="inline-block text-gray-400 cursor-pointer"
+              className="inline-block text-gray-400 dark:text-gray-600 cursor-pointer"
               onClick={() => scrollToSection('about')}
             >
               <svg

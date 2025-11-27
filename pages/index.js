@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg">Skip to main content</a>
       <Navigation activeSection={activeSection} />
-      <main id="main-content" className="min-h-screen bg-white text-gray-800 font-sans">
+      <main id="main-content" className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
         <div ref={heroRef}><Hero /></div>
         <div ref={aboutRef}><About /></div>
         <div ref={experienceRef}><Experience /></div>
