@@ -78,7 +78,7 @@ const Experience = () => {
   return (
     <section id="experience" className={`${LAYOUT.SECTION_PADDING} bg-gray-50 dark:bg-gray-800`}>
       <div className="max-w-6xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={ANIMATION_VARIANTS.staggerContainer}>
+        <motion.div initial="hidden" animate="visible" variants={ANIMATION_VARIANTS.staggerContainer}>
           <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Experience</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />

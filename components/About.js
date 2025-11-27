@@ -76,7 +76,6 @@ const About = () => {
               ))}
             </div>
           </motion.div>
-
         </motion.div>
       </div>
     </section>

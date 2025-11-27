@@ -3,7 +3,6 @@ import { LEADERSHIP } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
 
 const LeadershipCard = ({ leadership, index }) => {
-  // Update color classes to include dark mode variants
   const colorClasses = {
     blue: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500',
     green: 'from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-700 hover:border-green-400 dark:hover:border-green-500',
@@ -18,7 +17,7 @@ const LeadershipCard = ({ leadership, index }) => {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
-      className={`bg-gradient-to-br ${colorClasses[leadership.color]} border-2 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300`}
+      className={`bg-gradient-to-br ${colorClasses[leadership.color]} border-2 p-6 rounded-2xl shadow-md hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300`}
     >
       <div className="flex items-start gap-3 mb-4">
         <span className="text-3xl" aria-hidden="true">
@@ -83,7 +82,7 @@ const Leadership = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               Leadership Experience
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-4" />
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Building communities and driving positive change through student leadership
             </p>
