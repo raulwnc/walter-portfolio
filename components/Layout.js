@@ -11,7 +11,8 @@ const NAV_ITEMS = [
   { id: 'experience', label: 'Experience', path: '/experience', icon: '💼' },
   { id: 'research', label: 'Research', path: '/research', icon: '🔬' },
   { id: 'leadership', label: 'Leadership', path: '/leadership', icon: '👥' },
-  { id: 'contact', label: 'Contact', path: '/contact', icon: '✉️' }
+  { id: 'contact', label: 'Contact', path: '/contact', icon: '✉️' },
+  { id: 'life', label: 'Life', path: '/life', icon: '✨', special: true }
 ];
 
 const Layout = ({ children }) => {
@@ -60,7 +61,13 @@ const Layout = ({ children }) => {
                   key={item.id}
                   href={item.path}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    router.pathname === item.path
+                    item.special
+                      ? `${
+                          router.pathname.startsWith('/life')
+                            ? 'text-orange-600 dark:text-orange-400 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30'
+                            : 'text-orange-600 dark:text-orange-400 hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 dark:hover:from-orange-900/30 dark:hover:to-amber-900/30'
+                        }`
+                      : router.pathname === item.path
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
                       : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                   }`}
@@ -124,7 +131,13 @@ const Layout = ({ children }) => {
                     key={item.id}
                     href={item.path}
                     className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      router.pathname === item.path
+                      item.special
+                        ? `${
+                            router.pathname.startsWith('/life')
+                              ? 'text-orange-600 dark:text-orange-400 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30'
+                              : 'text-orange-600 dark:text-orange-400 hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 dark:hover:from-orange-900/30 dark:hover:to-amber-900/30'
+                          }`
+                        : router.pathname === item.path
                         ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
