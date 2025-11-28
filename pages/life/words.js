@@ -10,7 +10,7 @@ export default function WordsWisdom() {
     <>
       <Head>
         <title>Words & Wisdom | Walter Nieves</title>
-        <meta name="description" content="Books I've read, poetry I've written" />
+        <meta name="description" content="Books I&apos;ve read, poetry I&apos;ve written" />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-stone-900 dark:via-amber-900/20 dark:to-orange-900/20">
@@ -83,7 +83,7 @@ export default function WordsWisdom() {
               
               <p className="text-center text-stone-600 dark:text-stone-200 mb-8 max-w-2xl mx-auto">
                 I&apos;m currently curating my reading list and compiling my poetry collection. 
-                This space will soon feature two tabs: <strong>Reading Journey</strong> (books I've read with reviews) 
+                This space will soon feature two tabs: <strong>Reading Journey</strong> (books I&apos;ve read with reviews) 
                 and <strong>My Words</strong> (original poetry and my book in progress).
               </p>
 
