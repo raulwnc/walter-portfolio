@@ -184,22 +184,6 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-              variants={ANIMATION_VARIANTS.fadeIn}
-              className="mt-16"
-            >
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                Explore my journey
-              </p>
-              <div className="flex justify-center gap-2">
-                <Link href="/about" className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full" />
-                <Link href="/experience" className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full" />
-                <Link href="/research" className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full" />
-                <Link href="/leadership" className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full" />
-                <Link href="/contact" className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full" />
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 

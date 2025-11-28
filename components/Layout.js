@@ -17,7 +17,6 @@ const NAV_ITEMS = [
 const Layout = ({ children }) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   // Page loading progress bar
   useEffect(() => {
@@ -36,14 +35,6 @@ const Layout = ({ children }) => {
   }, [router]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
     setIsMenuOpen(false);
   }, [router.pathname]);
 
@@ -54,7 +45,7 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Header/Navigation */}
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-md dark:shadow-gray-950/50' : 'bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700'}`}>
+      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo/Name */}
