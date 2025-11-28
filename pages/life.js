@@ -58,7 +58,7 @@ export default function Life() {
         <meta name="description" content="Beyond the white coat - the human behind the PharmD" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50 to-orange-50 dark:from-stone-900 dark:via-stone-800 dark:to-stone-900">
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50 to-orange-50 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
           {/* Texture overlay */}
@@ -147,7 +147,7 @@ export default function Life() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     onClick={() => handleCardClick(section)}
-                    className={`group relative overflow-hidden rounded-3xl bg-white dark:bg-stone-800 shadow-xl hover:shadow-2xl transition-all duration-500 ${
+                    className={`group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-700 shadow-xl hover:shadow-2xl transition-all duration-500 ${
                       section.available ? 'cursor-pointer' : 'cursor-not-allowed opacity-75'
                     }`}
                   >

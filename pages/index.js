@@ -23,8 +23,8 @@ export default function Home() {
             animate="visible"
             variants={ANIMATION_VARIANTS.staggerContainer}
           >
-            {/* Headshot */}
-            <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-8">
+            {/* Headshot - Added mt-12 on mobile for spacing from navbar */}
+            <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-8 mt-12 sm:mt-0">
               <div className="relative w-32 h-32 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 rounded-full blur-lg opacity-30 dark:opacity-20 animate-pulse" />
                 <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
