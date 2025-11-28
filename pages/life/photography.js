@@ -10,7 +10,7 @@ export default function ThroughMyLens() {
     <>
       <Head>
         <title>Through My Lens | Walter Nieves</title>
-        <meta name="description" content="Moments worth capturing - Samsung photography" />
+        <meta name="description" content="Moments worth capturing - iPhone photography" />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-stone-900 dark:via-emerald-900/20 dark:to-teal-900/20">
@@ -56,7 +56,7 @@ export default function ThroughMyLens() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-stone-700 dark:text-stone-100 mb-12 font-light max-w-3xl mx-auto"
             >
-              Moments I capture. Beauty I notice. Stories told through Samsung photography.
+              Moments I capture. Beauty I notice. Stories told through iPhone photography.
             </motion.p>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function ThroughMyLens() {
               </h2>
               
               <p className="text-center text-stone-600 dark:text-stone-200 mb-8 max-w-2xl mx-auto">
-                I'm currently curating my favorite Samsung photos—sunsets that stopped me in my tracks, 
+                I&apos;m currently curating my favorite iPhone photos—sunsets that stopped me in my tracks, 
                 beach moments that felt timeless, flowers that caught the light just right, and scenery 
                 that made me pause. This space will feature an interactive masonry gallery with filters by theme.
               </p>
@@ -136,13 +136,13 @@ export default function ThroughMyLens() {
               <div className="mt-8 text-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-stone-100 dark:bg-stone-700 rounded-full text-stone-600 dark:text-stone-300 text-sm">
                   <Camera className="w-4 h-4" />
-                  <span>Shot on Samsung</span>
+                  <span>Shot on iPhone</span>
                 </div>
               </div>
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-stone-500 dark:text-stone-400">
-                  Full masonry gallery coming soon 📸
+                  Full masonry gallery with lightbox coming soon 📸
                 </p>
               </div>
             </motion.div>

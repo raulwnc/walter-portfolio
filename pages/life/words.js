@@ -82,7 +82,7 @@ export default function WordsWisdom() {
               </h2>
               
               <p className="text-center text-stone-600 dark:text-stone-200 mb-8 max-w-2xl mx-auto">
-                I'm currently curating my reading list and compiling my poetry collection. 
+                I&apos;m currently curating my reading list and compiling my poetry collection. 
                 This space will soon feature two tabs: <strong>Reading Journey</strong> (books I've read with reviews) 
                 and <strong>My Words</strong> (original poetry and my book in progress).
               </p>

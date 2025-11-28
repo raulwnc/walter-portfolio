@@ -359,7 +359,7 @@ export default function BeforePharmacy() {
                 </h3>
                 <p className="text-sm text-stone-600 dark:text-stone-300 max-w-md">
                   From these roots to pharmacy school at University of Pittsburgh. 
-                  Every experience shaped the pharmacist I'm becoming.
+                  Every experience shaped the pharmacist I&apos;m becoming.
                 </p>
               </div>
             </motion.div>

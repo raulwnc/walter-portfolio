@@ -82,7 +82,7 @@ export default function SpartanSpirit() {
               </h2>
               
               <p className="text-center text-stone-600 dark:text-stone-200 mb-8 max-w-2xl mx-auto">
-                I'm currently gathering photos, stats, and reflections from my Spartan race experiences. 
+                I&apos;m currently gathering photos, stats, and reflections from my Spartan race experiences. 
                 This space will feature a visual timeline of races, obstacle breakdowns, personal bests, 
                 and the lessons learned through mud, sweat, and determination.
               </p>
