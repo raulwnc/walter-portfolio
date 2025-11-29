@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Image from 'next/image';
 import { BookOpen, Camera, Zap, Sparkles } from 'lucide-react';
 
 export default function Life() {
@@ -67,15 +68,6 @@ export default function Life() {
           }} />
 
           <div className="relative z-10 max-w-5xl mx-auto text-center">
-            {/* Small profile photo - placeholder for now */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="mb-8 inline-block"
-            >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 mx-auto shadow-2xl" />
-            </motion.div>
 
             {/* Main heading */}
             <motion.h1
