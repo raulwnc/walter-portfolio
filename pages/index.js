@@ -41,7 +41,7 @@ export default function Home() {
 
             <motion.h1
               variants={ANIMATION_VARIANTS.fadeInDown}
-              className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 dark:text-gray-100 mb-3"
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 dark:text-gray-100 mb-3 whitespace-nowrap"
             >
               {PERSONAL_INFO.name}
             </motion.h1>
@@ -149,7 +149,7 @@ export default function Home() {
             {/* CTA Buttons */}
             <motion.div
               variants={ANIMATION_VARIANTS.fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center pb-8"
             >
               <Link href="/about">
                 <motion.button
