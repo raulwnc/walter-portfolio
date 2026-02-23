@@ -1,0 +1,35 @@
+/* NProgress Loading Bar Styles */
+#nprogress {
+  pointer-events: none;
+  display: none; /* Hide the progress bar */
+}
+
+#nprogress .bar {
+  display: none; /* Hide the bar */
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #2563eb, 0 0 5px #2563eb;
+  opacity: 1.0;
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+#nprogress .spinner {
+  display: none;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  #nprogress .bar {
+    background: linear-gradient(to right, #3b82f6, #a855f7);
+  }
+  
+  #nprogress .peg {
+    box-shadow: 0 0 10px #3b82f6, 0 0 5px #3b82f6;
+  }
+}
