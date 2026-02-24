@@ -238,13 +238,6 @@ const SKILLS_DATA = {
   ]
 };
 
-const progressColors = {
-  blue: 'linear-gradient(to right, #60a5fa, #2563eb)',
-  purple: 'linear-gradient(to right, #c084fc, #9333ea)',
-  orange: 'linear-gradient(to right, #fb923c, #ea580c)',
-  green: 'linear-gradient(to right, #4ade80, #16a34a)'
-};
-
 const SkillCard = ({ skill, index, onExpand }) => {
   const colorClasses = {
     blue: {
@@ -290,25 +283,6 @@ const SkillCard = ({ skill, index, onExpand }) => {
         </div>
       </div>
 
-      <div className="mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-semibold text-gray-600 dark:text-gray-400">
-            Proficiency
-          </span>
-          <span className={`text-sm font-bold ${colors.text}`}>
-            {skill.proficiency}%
-          </span>
-        </div>
-        <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-          <div
-            className="h-full rounded-full"
-            style={{
-              width: `${skill.proficiency}%`,
-              background: progressColors[skill.color]
-            }}
-          />
-        </div>
-      </div>
 
       <div className="flex flex-wrap gap-2 mb-3">
         {skill.hours && (
@@ -386,10 +360,7 @@ const SkillModal = ({ skill, onClose }) => {
               <span className="text-4xl">{skill.icon}</span>
               <div>
                 <h3 className="text-2xl font-bold mb-1">{skill.name}</h3>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm opacity-90">Proficiency:</span>
-                  <span className="text-xl font-bold">{skill.proficiency}%</span>
-                </div>
+
               </div>
             </div>
             <button
