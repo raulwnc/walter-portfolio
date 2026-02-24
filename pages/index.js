@@ -84,12 +84,8 @@ export default function Home() {
             {/* Quick Stats */}
             <motion.div
               variants={ANIMATION_VARIANTS.fadeInUp}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12"
+              className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12"
             >
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">500+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Clinical Hours</div>
-              </div>
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Students Mentored</div>
