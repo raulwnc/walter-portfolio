@@ -10,7 +10,6 @@ const SKILLS_DATA = {
       proficiency: 85,
       icon: '💊',
       color: 'blue',
-      hours: '500+',
       projects: '100+',
       evidence: [
         'Rite Aid IPPE: 120 hours of CMRs and patient counseling',
@@ -27,14 +26,13 @@ const SKILLS_DATA = {
       proficiency: 80,
       icon: '🏥',
       color: 'blue',
-      hours: '500+',
       evidence: [
         'CVS & Rite Aid: Proficient in pharmacy management systems',
         'Workflow optimization in high-volume retail settings',
         'Prescription verification and dispensing processes',
         'Specialty pharmacy operations at RareMed Solutions'
       ],
-      impact: '500+ clinical hours across multiple practice settings',
+      impact: 'Clinical experience across multiple pharmacy practice settings',
       link: '#experience'
     },
     {
@@ -285,11 +283,7 @@ const SkillCard = ({ skill, index, onExpand }) => {
 
 
       <div className="flex flex-wrap gap-2 mb-3">
-        {skill.hours && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            ⏱️ {skill.hours} hours
-          </span>
-        )}
+
         {skill.projects && (
           <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
             📊 {skill.projects} projects
@@ -529,11 +523,8 @@ const SkillsDashboard = () => {
             ))}
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">500+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Clinical Hours</div>
-            </div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">50+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Students Mentored</div>

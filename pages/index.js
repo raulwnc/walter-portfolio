@@ -116,7 +116,7 @@ export default function Home() {
                     Clinical Expertise
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    500+ hours of patient care, CMRs, and clinical operations
+                    Patient care, CMRs, and clinical operations across diverse settings
                   </p>
                 </div>
               </Link>
