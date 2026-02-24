@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import ContactForm from './ContactForm';
-import { PERSONAL_INFO, REFERENCES } from '../data/portfolio';
+import { PERSONAL_INFO } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
 
 const Contact = () => {
@@ -68,34 +68,6 @@ const Contact = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">{PERSONAL_INFO.location}</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-md">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                  References
-                </h3>
-                <div className="space-y-4">
-                  {REFERENCES.map((reference, index) => (
-                    <div key={index} className="pb-4 last:pb-0 border-b last:border-b-0 border-gray-200 dark:border-gray-700">
-                      <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
-                        {reference.name}
-                      </p>
-                      {reference.title && (
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">
-                          {reference.title}
-                        </p>
-                      )}
-                      {reference.institution && (
-                        <p className="text-xs text-gray-500 dark:text-gray-500 mb-2">
-                          {reference.institution}
-                        </p>
-                      )}
-                      <a href={`mailto:${reference.email}`} className="text-xs text-blue-600 dark:text-blue-400 hover:underline">
-                        {reference.email}
-                      </a>
-                    </div>
-                  ))}
                 </div>
               </div>
 
