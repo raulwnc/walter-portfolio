@@ -576,7 +576,7 @@ export const CTA = {
 
 // Footer
 export const FOOTER = {
-  copyright: '2025 Walter Nieves-Canabal',
+  copyright: 'Walter Nieves-Canabal',
   tagline: 'Built with 💻 + 🧠',
   links: [
     { text: 'Privacy', url: '#' },
