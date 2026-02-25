@@ -355,13 +355,7 @@ export const RESEARCH = [
     ],
     technologies: ['SimX VR', 'Educational Technology', 'Clinical Simulation', 'Competency Assessment'],
     icon: '🥽',
-    publications: [
-      {
-        title: 'Abre los Ojos para Escucharnos: Using Virtual Reality to Teach Social Determinants of Health',
-        type: 'Poster',
-        venue: '2024 Health Disparities & Social Justice Poster Competition'
-      }
-    ],
+    publications: [],
     period: 'Jan 2024 - Present',
     supervisor: 'Ashley Yarabinec, PharmD'
   },
