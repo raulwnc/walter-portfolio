@@ -228,97 +228,109 @@ export const PROJECTS = [
 
 // Future APPEs (Advanced Pharmacy Practice Experiences)
 export const FUTURE_APPES = [
-  // Spring 2026
   {
-    id: 'appe-hospital-spring26',
+    id: 'appe-block-1',
     title: 'Hospital Pharmacy',
+    organization: 'West Penn Hospital - Allegheny Health Network',
+    preceptor: 'Jessica Butala',
     category: 'Institutional Pharmacy',
     description: 'Advanced practice experience in hospital pharmacy focusing on acute care medication management, interdisciplinary collaboration, and clinical decision-making in the inpatient setting.',
     status: 'Upcoming',
     icon: '🏥',
     color: 'blue',
-    period: 'Spring 2026',
+    period: 'May 11 - Jun 12, 2026',
     type: 'Core Rotation'
   },
-  // Summer 2026
   {
-    id: 'appe-pc-elective-summer26',
-    title: 'Patient Care (PC) Elective',
-    category: 'Patient Care Elective',
-    description: 'Elective rotation focusing on advanced patient care in a specialized area of pharmacy practice.',
+    id: 'appe-block-2',
+    title: 'Patient Care Elective - Specialty Pharmacy',
+    organization: 'CVS Health - Caremark Specialty',
+    preceptor: 'Connie Constantino',
+    category: 'Specialty Pharmacy',
+    description: 'Elective rotation in specialty pharmacy focusing on complex medication management, prior authorizations, and patient support programs for high-cost drug therapies.',
     status: 'Upcoming',
     icon: '💊',
     color: 'purple',
-    period: 'Summer 2026',
+    period: 'Jun 15 - Jul 17, 2026',
     type: 'PC Elective'
   },
   {
-    id: 'appe-non-pc-elective-summer26',
-    title: 'Non-Patient Care Elective',
-    category: 'Non-PC Elective',
-    description: 'Elective rotation in non-patient care area such as regulatory affairs, pharmacy informatics, or industry operations.',
+    id: 'appe-block-3',
+    title: 'Non-Patient Care Elective - Digital Health',
+    organization: 'CVS Digital Health (Virtual)',
+    preceptor: 'David Katz',
+    category: 'Digital Health',
+    description: 'Virtual elective rotation exploring digital health strategy, pharmacy innovation, and technology-driven solutions at the intersection of pharmacy and healthcare technology.',
     status: 'Upcoming',
-    icon: '💼',
-    color: 'orange',
-    period: 'Summer 2026',
+    icon: '💻',
+    color: 'purple',
+    period: 'Jul 20 - Aug 21, 2026',
     type: 'Non-PC Elective'
   },
-  // Fall 2026
   {
-    id: 'appe-community-fall26',
+    id: 'appe-block-4',
     title: 'Community Pharmacy',
+    organization: 'Harris Teeter Pharmacy #043',
+    preceptor: 'Bradley Lovelace',
     category: 'Community Pharmacy',
-    description: 'Advanced practice experience in community pharmacy setting focusing on comprehensive medication management, immunizations, and patient counseling.',
+    description: 'Advanced practice experience in community pharmacy focusing on comprehensive medication management, immunizations, patient counseling, and pharmacy operations.',
     status: 'Upcoming',
     icon: '🏪',
     color: 'blue',
-    period: 'Fall 2026',
+    period: 'Aug 24 - Sep 25, 2026',
     type: 'Core Rotation'
   },
   {
-    id: 'appe-acute-care-fall26',
-    title: 'Acute Care',
+    id: 'appe-block-5',
+    title: 'Acute Care Medicine',
+    organization: 'VA Pittsburgh Healthcare System',
+    preceptor: 'Allison Langland',
     category: 'Acute Care',
-    description: 'Advanced practice experience in acute care focusing on critical care pharmacy, emergency medicine, and intensive care unit medication management.',
+    description: 'Advanced practice experience in acute care medicine at the VA, focusing on veterans health, critical care pharmacotherapy, and interdisciplinary patient management.',
     status: 'Upcoming',
     icon: '🚑',
     color: 'red',
-    period: 'Fall 2026',
+    period: 'Sep 28 - Oct 30, 2026',
     type: 'Core Rotation'
   },
   {
-    id: 'appe-ambulatory-fall26',
+    id: 'appe-block-6',
     title: 'Ambulatory Care',
+    organization: 'Mosaic Pharmacy Service',
+    preceptor: 'Patricia Powers',
     category: 'Ambulatory Care',
-    description: 'Advanced practice experience in ambulatory care clinic focusing on chronic disease state management and preventive care.',
+    description: 'Advanced practice experience in ambulatory care focusing on chronic disease state management, medication therapy management, and preventive care in an outpatient setting.',
     status: 'Upcoming',
     icon: '🩺',
     color: 'green',
-    period: 'Fall 2026',
+    period: 'Nov 2 - Dec 4, 2026',
     type: 'Core Rotation'
   },
-  // Spring 2027
   {
-    id: 'appe-non-pc-elective-spring27',
-    title: 'Non-Patient Care Elective',
-    category: 'Non-PC Elective',
-    description: 'Second elective rotation in non-patient care area - potential focus on digital health, specialty pharmacy operations, or pharmaceutical industry.',
+    id: 'appe-block-7',
+    title: 'Non-Patient Care Elective - Corporate Innovation',
+    organization: 'CVS Corporate Enterprise Innovation',
+    preceptor: 'Teniola Kumapayi',
+    category: 'Healthcare Innovation',
+    description: 'Elective rotation at CVS Corporate focused on enterprise-level healthcare innovation, strategic initiatives, and pharmacy industry operations.',
     status: 'Upcoming',
     icon: '⚙️',
     color: 'orange',
-    period: 'Spring 2027',
+    period: 'Jan 4 - Feb 5, 2027',
     type: 'Non-PC Elective'
   },
   {
-    id: 'appe-ambulatory-spring27',
-    title: 'Additional Ambulatory Care',
+    id: 'appe-block-8',
+    title: 'Ambulatory Care - Community Health',
+    organization: 'CDT Municipio de San Juan (Programa SIDA)',
+    preceptor: 'Noel Santiago',
     category: 'Ambulatory Care',
-    description: 'Additional ambulatory care experience focusing on specialized patient populations or disease states.',
+    description: 'Ambulatory care rotation in San Juan, Puerto Rico focused on HIV/AIDS patient management, underserved community health, and culturally competent pharmaceutical care.',
     status: 'Upcoming',
     icon: '🩺',
     color: 'green',
-    period: 'Spring 2027',
-    type: 'Additional Core/Elective'
+    period: 'Feb 8 - Mar 12, 2027',
+    type: 'Core Rotation'
   }
 ];
 
@@ -355,8 +367,14 @@ export const RESEARCH = [
     ],
     technologies: ['SimX VR', 'Educational Technology', 'Clinical Simulation', 'Competency Assessment'],
     icon: '🥽',
-    publications: [],
-    period: 'Jan 2024 - Present',
+    publications: [
+      {
+        title: 'Abre los Ojos para Escucharnos: Using Virtual Reality to Teach Social Determinants of Health',
+        type: 'Poster',
+        venue: '2024 Health Disparities & Social Justice Poster Competition'
+      }
+    ],
+    period: 'Jan 2024 - Apr 2025',
     supervisor: 'Ashley Yarabinec, PharmD'
   },
   {
