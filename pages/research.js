@@ -217,7 +217,7 @@ export default function ResearchPage() {
   return (
     <Layout>
       {/* Research Section */}
-      <section className={`${LAYOUT.SECTION_PADDING} bg-white dark:bg-gray-900`}>
+      <section id="research" className={`${LAYOUT.SECTION_PADDING} bg-white dark:bg-gray-900`}>
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial="hidden"
@@ -271,7 +271,7 @@ export default function ResearchPage() {
       </section>
 
       {/* Presentations Section */}
-      <section className={`${LAYOUT.SECTION_PADDING} bg-gray-50 dark:bg-gray-800`}>
+      <section id="presentations" className={`${LAYOUT.SECTION_PADDING} bg-gray-50 dark:bg-gray-800`}>
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial="hidden"
@@ -307,7 +307,7 @@ export default function ResearchPage() {
               className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border-2 border-purple-200 dark:border-purple-700 rounded-xl text-center"
             >
               <p className="text-gray-700 dark:text-gray-300">
-                <span className="font-semibold">Upcoming:</span> More presentations scheduled for 2025. Stay tuned!
+                <span className="font-semibold">Upcoming:</span> More presentations scheduled for 2026. Stay tuned!
               </p>
             </motion.div>
           </motion.div>

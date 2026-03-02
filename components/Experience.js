@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { WORK_EXPERIENCE, IPPES, PROJECTS, FUTURE_APPES } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const ExperienceCard = ({ experience, index }) => {
   const getCardColor = (color) => {
@@ -65,6 +66,14 @@ const ExperienceCard = ({ experience, index }) => {
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState('work');
+  const router = useRouter();
+
+  useEffect(() => {
+    const tab = router.query.tab;
+    if (tab && ['work', 'ippes', 'projects', 'appes'].includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, [router.query.tab]);
 
   const tabs = [
     { id: 'work', label: 'Work Experience', icon: '💼', data: WORK_EXPERIENCE },
