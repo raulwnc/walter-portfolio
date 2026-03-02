@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import Layout from '../components/Layout';
 import { RESEARCH, PRESENTATIONS } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
@@ -91,13 +92,19 @@ const ResearchCard = ({ research, index }) => {
 };
 
 const PresentationCard = ({ presentation, index }) => {
+  const isApha = presentation.id === 'apha-2026-poster';
   return (
     <motion.div
+      id={presentation.id}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-lg dark:shadow-gray-900/50 transition-all duration-300"
+      className={`bg-white dark:bg-gray-800 border-2 p-6 rounded-xl hover:shadow-lg dark:shadow-gray-900/50 transition-all duration-300 ${
+        isApha
+          ? 'border-blue-300 dark:border-blue-600 hover:border-blue-400'
+          : 'border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600'
+      }`}
     >
       <div className="flex items-start gap-4">
         <span className="text-3xl flex-shrink-0" aria-hidden="true">
@@ -133,6 +140,52 @@ const PresentationCard = ({ presentation, index }) => {
             {presentation.description}
           </p>
 
+          {isApha && (
+            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🏷️</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <strong className="text-gray-900 dark:text-gray-100">Posterboard #322</strong>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🕐</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <strong className="text-gray-900 dark:text-gray-100">Saturday, March 28, 2026 · 1:00–3:00 PM</strong>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">📍</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <strong className="text-gray-900 dark:text-gray-100">Exhibit Hall J, Los Angeles Convention Center</strong>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🎪</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <strong className="text-gray-900 dark:text-gray-100">Meet the Researchers Poster Session</strong>
+                </p>
+              </div>
+              <div className="flex gap-3 mt-2">
+                <a
+                  href="/StepForwardRx_Poster.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  <span>👁️</span> View Poster
+                </a>
+                <a
+                  href="/StepForwardRx_Poster.pdf"
+                  download="StepForwardRx_Poster.pdf"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 text-xs font-semibold rounded-lg transition-colors"
+                >
+                  <span>📄</span> Download PDF
+                </a>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-wrap gap-2">
             {presentation.topics.map((topic) => (
               <span
@@ -150,6 +203,23 @@ const PresentationCard = ({ presentation, index }) => {
 };
 
 export default function ResearchPage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      // Try immediately, then retry after animations settle
+      const tryScroll = (attempts = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (attempts < 10) {
+          setTimeout(() => tryScroll(attempts + 1), 150);
+        }
+      };
+      setTimeout(() => tryScroll(), 300);
+    }
+  }, []);
+
   return (
     <Layout>
       {/* Research Section */}
