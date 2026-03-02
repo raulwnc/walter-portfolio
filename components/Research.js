@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { RESEARCH } from '../data/portfolio';
+import { useEffect } from 'react';
+import Layout from '../components/Layout';
+import { RESEARCH, PRESENTATIONS } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
 
 const ResearchCard = ({ research, index }) => {
@@ -34,7 +36,6 @@ const ResearchCard = ({ research, index }) => {
         {research.description}
       </p>
 
-      {/* Outcomes */}
       {research.outcomes && (
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">
@@ -53,7 +54,6 @@ const ResearchCard = ({ research, index }) => {
         </div>
       )}
 
-      {/* Technologies */}
       {research.technologies && (
         <div className="flex flex-wrap gap-2 mt-4">
           {research.technologies.map((tech) => (
@@ -67,7 +67,6 @@ const ResearchCard = ({ research, index }) => {
         </div>
       )}
 
-      {/* Publications (if any) */}
       {research.publications && research.publications.length > 0 && (
         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
           <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
@@ -76,9 +75,13 @@ const ResearchCard = ({ research, index }) => {
           <ul className="space-y-1">
             {research.publications.map((pub, i) => (
               <li key={i} className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
-                <a href={pub.url} target="_blank" rel="noopener noreferrer">
-                  {pub.title}
-                </a>
+                {pub.url ? (
+                  <a href={pub.url} target="_blank" rel="noopener noreferrer">
+                    {pub.title}
+                  </a>
+                ) : (
+                  <span>{pub.title}</span>
+                )}
               </li>
             ))}
           </ul>
@@ -88,62 +91,227 @@ const ResearchCard = ({ research, index }) => {
   );
 };
 
-const Research = () => {
-  return (
-    <section id="research" className={`${LAYOUT.SECTION_PADDING} bg-white dark:bg-gray-900`}>
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={ANIMATION_VARIANTS.staggerContainer}
-        >
-          {/* Section Header */}
-          <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Research & Innovation
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Advancing pharmacy practice through evidence-based research and innovative technologies
-            </p>
-          </motion.div>
+const PresentationCard = ({ presentation, index }) => {
+  const isApha = presentation.id === 'apha-2026-poster';
 
-          {/* Research Cards */}
-          <div className="space-y-6">
-            {RESEARCH.map((research, index) => (
-              <ResearchCard key={research.id} research={research} index={index} />
-            ))}
+  return (
+    <motion.div
+      id={presentation.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className={`bg-white dark:bg-gray-800 border-2 p-6 rounded-xl hover:shadow-lg dark:shadow-gray-900/50 transition-all duration-300 ${
+        isApha
+          ? 'border-blue-300 dark:border-blue-600 hover:border-blue-400 dark:hover:border-blue-500'
+          : 'border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600'
+      }`}
+    >
+      <div className="flex items-start gap-4">
+        <span className="text-3xl flex-shrink-0" aria-hidden="true">
+          {presentation.icon}
+        </span>
+        <div className="flex-1">
+          <div className="flex items-start justify-between mb-2">
+            <div>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+                {presentation.title}
+              </h3>
+              {presentation.subtitle && (
+                <p className="text-sm text-gray-600 dark:text-gray-400 italic mb-2">
+                  {presentation.subtitle}
+                </p>
+              )}
+            </div>
+            <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap ml-4">
+              {presentation.date}
+            </span>
           </div>
 
-          {/* Stats Section */}
-          <motion.div
-            variants={ANIMATION_VARIANTS.fadeInUp}
-            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl border border-blue-200 dark:border-blue-700"
-          >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
-                {RESEARCH.length}
+          <div className="flex items-center gap-2 mb-3">
+            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+              isApha
+                ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                : 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400'
+            }`}>
+              {presentation.type}
+            </span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              {presentation.audience}
+            </span>
+          </div>
+
+          <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+            {presentation.description}
+          </p>
+
+          {isApha && (
+            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🏷️</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-gray-900 dark:text-gray-100">Posterboard #322</span>
+                </p>
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Research Projects</div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🕐</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-gray-900 dark:text-gray-100">Saturday, March 28, 2026 · 1:00–3:00 PM</span>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">📍</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-gray-900 dark:text-gray-100">Exhibit Hall J, Los Angeles Convention Center</span>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🎪</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-bold text-gray-900 dark:text-gray-100">Meet the Researchers Poster Session</span>
+                </p>
+              </div>
+              {presentation.poster && (
+                <a
+                  href={presentation.poster}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  <span>📄</span> View Poster PDF
+                </a>
+              )}
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">3+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Focus Areas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">VR</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Innovation</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">FDA</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
-            </div>
-          </motion.div>
-        </motion.div>
+          )}
+
+          <div className="flex flex-wrap gap-2">
+            {presentation.topics.map((topic) => (
+              <span
+                key={topic}
+                className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded text-xs"
+              >
+                {topic}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 
-export default Research;
+export default function ResearchPage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash.replace('#', ''));
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 400);
+    }
+  }, []);
+
+  return (
+    <Layout>
+      {/* Research Section */}
+      <section className={`${LAYOUT.SECTION_PADDING} bg-white dark:bg-gray-900`}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={ANIMATION_VARIANTS.staggerContainer}
+          >
+            {/* Section Header */}
+            <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="text-center mb-12">
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                Research & Innovation
+              </h1>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Advancing pharmacy practice through evidence-based research and innovative technologies
+              </p>
+            </motion.div>
+
+            {/* Research Cards */}
+            <div className="space-y-6 mb-16">
+              {RESEARCH.map((research, index) => (
+                <ResearchCard key={research.id} research={research} index={index} />
+              ))}
+            </div>
+
+            {/* Stats Section */}
+            <motion.div
+              variants={ANIMATION_VARIANTS.fadeInUp}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl border border-blue-200 dark:border-blue-700 mb-16"
+            >
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+                  {RESEARCH.length}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Research Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">3+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Focus Areas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">VR</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Innovation</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">FDA</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Presentations Section */}
+      <section className={`${LAYOUT.SECTION_PADDING} bg-gray-50 dark:bg-gray-800`}>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={ANIMATION_VARIANTS.staggerContainer}
+          >
+            {/* Section Header */}
+            <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                Presentations
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Sharing insights on digital health, regulatory science, and pharmacy innovation
+              </p>
+            </motion.div>
+
+            {/* Presentations List */}
+            <div className="space-y-6">
+              {PRESENTATIONS.map((presentation, index) => (
+                <PresentationCard
+                  key={presentation.id}
+                  presentation={presentation}
+                  index={index}
+                />
+              ))}
+            </div>
+
+            {/* Upcoming Notice */}
+            <motion.div
+              variants={ANIMATION_VARIANTS.fadeInUp}
+              className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border-2 border-purple-200 dark:border-purple-700 rounded-xl text-center"
+            >
+              <p className="text-gray-700 dark:text-gray-300">
+                <span className="font-semibold">Upcoming:</span> More presentations scheduled for 2026. Stay tuned!
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+}

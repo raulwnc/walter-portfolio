@@ -409,6 +409,21 @@ export const RESEARCH = [
 // Presentations
 export const PRESENTATIONS = [
   {
+    id: 'apha-2026-poster',
+    title: 'Pharmacist-Led Gait Biometrics Through a Clinical Decision Support System in Multiple Sclerosis',
+    subtitle: 'Development and Evaluation Plan',
+    type: 'Poster Presentation',
+    date: 'March 28, 2026',
+    audience: 'APhA Annual Meeting & Exposition Attendees',
+    topics: ['Gait Biometrics', 'Multiple Sclerosis', 'Clinical Decision Support', 'Digital Health', 'Pharmacist-Led Care'],
+    description: 'Poster #322 — Meet the Researchers Poster Session, Saturday March 28, 1:00-3:00pm, Exhibit Hall J, Los Angeles Convention Center. Presenting StepForwardRx, a pharmacist-led clinical decision support system that captures longitudinal gait metrics via mobile devices to support early detection of functional decline in MS patients.',
+    poster: '/StepForwardRx_Poster.pdf',
+    icon: '🧠',
+    venue: 'APhA Annual Meeting 2026',
+    location: 'Los Angeles Convention Center, Exhibit Hall J',
+    posterNumber: '#322'
+  },
+  {
     id: 'capstone-rpm',
     title: 'The Future is Remote',
     subtitle: 'FDA Guidance & Regulatory Strategy for RPM in Drug Research',

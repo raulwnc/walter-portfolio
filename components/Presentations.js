@@ -3,13 +3,20 @@ import { PRESENTATIONS } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
 
 const PresentationCard = ({ presentation, index }) => {
+  const isApha = presentation.id === 'apha-2026-poster';
+
   return (
     <motion.div
+      id={presentation.id}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 p-6 rounded-xl hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-lg dark:shadow-gray-900/50 transition-all duration-300"
+      className={`bg-white dark:bg-gray-800 border-2 p-6 rounded-xl hover:shadow-lg dark:shadow-gray-900/50 transition-all duration-300 ${
+        isApha
+          ? 'border-blue-300 dark:border-blue-600 hover:border-blue-400 dark:hover:border-blue-500'
+          : 'border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600'
+      }`}
     >
       <div className="flex items-start gap-4">
         <span className="text-3xl flex-shrink-0" aria-hidden="true">
@@ -33,7 +40,11 @@ const PresentationCard = ({ presentation, index }) => {
           </div>
 
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full text-xs font-semibold">
+            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+              isApha
+                ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                : 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400'
+            }`}>
               {presentation.type}
             </span>
             <span className="text-xs text-gray-500 dark:text-gray-400">
@@ -44,6 +55,46 @@ const PresentationCard = ({ presentation, index }) => {
           <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
             {presentation.description}
           </p>
+
+          {/* APhA session details box */}
+          {isApha && (
+            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🏷️</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">Posterboard:</span> #322
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🕐</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">When:</span> Saturday, March 28, 2026 · 1:00–3:00 PM
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">📍</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">Where:</span> Exhibit Hall J, Los Angeles Convention Center
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🎪</span>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">Session:</span> Meet the Researchers Poster Session
+                </p>
+              </div>
+              {presentation.poster && (
+                <a
+                  href={presentation.poster}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  <span>📄</span> View Poster PDF
+                </a>
+              )}
+            </div>
+          )}
 
           <div className="flex flex-wrap gap-2">
             {presentation.topics.map((topic) => (
@@ -71,7 +122,6 @@ const Presentations = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={ANIMATION_VARIANTS.staggerContainer}
         >
-          {/* Section Header */}
           <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               Presentations
@@ -82,7 +132,6 @@ const Presentations = () => {
             </p>
           </motion.div>
 
-          {/* Presentations List */}
           <div className="space-y-6">
             {PRESENTATIONS.map((presentation, index) => (
               <PresentationCard
@@ -93,13 +142,12 @@ const Presentations = () => {
             ))}
           </div>
 
-          {/* Upcoming Notice */}
           <motion.div
             variants={ANIMATION_VARIANTS.fadeInUp}
             className="mt-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border-2 border-purple-200 dark:border-purple-700 rounded-xl text-center"
           >
             <p className="text-gray-700 dark:text-gray-300">
-              <span className="font-semibold">Upcoming:</span> More presentations scheduled for 2025. Stay tuned!
+              <span className="font-semibold">Upcoming:</span> More presentations scheduled for 2026. Stay tuned!
             </p>
           </motion.div>
         </motion.div>

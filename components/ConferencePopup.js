@@ -5,7 +5,6 @@ const ConferencePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show after 2.5 seconds, only once per session
     const hasSeenPopup = sessionStorage.getItem('apha2026-popup-seen');
     if (!hasSeenPopup) {
       const timer = setTimeout(() => {
@@ -18,6 +17,11 @@ const ConferencePopup = () => {
   const handleClose = () => {
     setIsVisible(false);
     sessionStorage.setItem('apha2026-popup-seen', 'true');
+  };
+
+  const handlePosterClick = () => {
+    handleClose();
+    window.location.href = '/research#apha-2026-poster';
   };
 
   return (
@@ -58,11 +62,17 @@ const ConferencePopup = () => {
                   ×
                 </button>
 
-                {/* Badge */}
-                <div className="flex items-center gap-2 mb-4">
+                {/* Badge row with poster link */}
+                <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full">
                     APhA Annual 2026
                   </span>
+                  <button
+                    onClick={handlePosterClick}
+                    className="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+                  >
+                    View Poster →
+                  </button>
                 </div>
 
                 {/* Heading */}
@@ -70,7 +80,7 @@ const ConferencePopup = () => {
                   Let&apos;s Stay Connected 👋
                 </h2>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                  Hi! I&apos;m Walter — PharmD candidate at Pitt bridging pharmacy and technology. 
+                  Hi! I&apos;m Walter — PharmD candidate at Pitt bridging pharmacy and technology.
                   Save my contact directly to your phone in one tap.
                 </p>
 
@@ -103,7 +113,6 @@ const ConferencePopup = () => {
                   </button>
                 </div>
 
-                {/* Works on both */}
                 <p className="text-xs text-gray-400 dark:text-gray-500 text-center mt-4">
                   Works on iPhone & Android — no app needed
                 </p>
