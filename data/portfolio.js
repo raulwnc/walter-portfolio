@@ -416,7 +416,7 @@ export const PRESENTATIONS = [
     date: 'March 28, 2026',
     audience: 'APhA Annual Meeting & Exposition Attendees',
     topics: ['Gait Biometrics', 'Multiple Sclerosis', 'Clinical Decision Support', 'Digital Health', 'Pharmacist-Led Care'],
-    description: 'Poster #322 — Meet the Researchers Poster Session, Saturday March 28, 1:00-3:00pm, Exhibit Hall J, Los Angeles Convention Center. Presenting StepForwardRx, a pharmacist-led clinical decision support system that captures longitudinal gait metrics via mobile devices to support early detection of functional decline in MS patients.',
+    description: 'Presenting StepForwardRx, a pharmacist-led clinical decision support system that captures longitudinal gait metrics via mobile devices to support early detection of functional decline in MS patients.',
     poster: '/StepForwardRx_Poster.pdf',
     icon: '🧠',
     venue: 'APhA Annual Meeting 2026',

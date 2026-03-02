@@ -161,7 +161,7 @@ const PresentationCard = ({ presentation, index }) => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm">🎪</span>
+                <span className="text-sm">🎯</span>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
                   <strong className="text-gray-900 dark:text-gray-100">Meet the Researchers Poster Session</strong>
                 </p>
@@ -175,13 +175,7 @@ const PresentationCard = ({ presentation, index }) => {
                 >
                   <span>👁️</span> View Poster
                 </a>
-                <a
-                  href="/StepForwardRx_Poster.pdf"
-                  download="StepForwardRx_Poster.pdf"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 text-xs font-semibold rounded-lg transition-colors"
-                >
-                  <span>📄</span> Download PDF
-                </a>
+
               </div>
             </div>
           )}
