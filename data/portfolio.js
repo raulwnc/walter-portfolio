@@ -193,6 +193,7 @@ export const IPPES = [
       'Applied patient-centered design principles'
     ],
     technologies: ['Digital Health Tools', 'Health Education', 'Community Outreach', 'Patient Engagement'],
+    pdf: '/Medical_Orientation_Casa_San_Jose.pdf',
     icon: '🤝',
     color: 'orange',
     period: 'Sept 2023 - Apr 2024',

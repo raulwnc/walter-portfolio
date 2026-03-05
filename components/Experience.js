@@ -60,6 +60,18 @@ const ExperienceCard = ({ experience, index }) => {
           {Object.entries(experience.metrics).map(([key, value]) => (<div key={key} className="text-center"><div className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400">{value}</div><div className="text-xs text-gray-600 dark:text-gray-400 capitalize">{key}</div></div>))}
         </div>
       )}
+      {experience.pdf && (
+        <div className="mt-4">
+          <a
+            href={experience.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+          >
+            <span>👁️</span> View PDF
+          </a>
+        </div>
+      )}
     </motion.div>
   );
 };
