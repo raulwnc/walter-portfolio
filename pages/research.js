@@ -180,7 +180,7 @@ const PresentationCard = ({ presentation, index }) => {
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-3">
             {presentation.topics.map((topic) => (
               <span
                 key={topic}
@@ -190,6 +190,17 @@ const PresentationCard = ({ presentation, index }) => {
               </span>
             ))}
           </div>
+
+          {presentation.pdf && !isApha && (
+            <a
+              href={presentation.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors"
+            >
+              <span>👁️</span> View PDF
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

@@ -432,6 +432,7 @@ export const PRESENTATIONS = [
     audience: 'Faculty, Students, Industry Professionals',
     topics: ['Remote Patient Monitoring', 'FDA Regulation', 'Digital Health', 'Drug Development'],
     description: 'Comprehensive analysis of FDA guidance for remote patient monitoring technologies in clinical drug research.',
+    pdf: '/The_Future_is_Remote_Capstone.pdf',
     icon: '🎯'
   },
   {
@@ -443,6 +444,7 @@ export const PRESENTATIONS = [
     audience: 'Pharmacy Students, Faculty',
     topics: ['Artificial Intelligence', 'Regulatory Science', 'Drug Development', 'FDA Guidance'],
     description: 'Critical review of FDA guidance on AI in regulatory decision-making and its implications for pharmaceutical development.',
+    pdf: '/AI_in_Drug_Reg_Decision_Making_Seminar.pdf',
     icon: '🤖'
   },
   {
@@ -454,6 +456,7 @@ export const PRESENTATIONS = [
     audience: 'University Research Community',
     topics: ['Virtual Reality', 'Social Determinants of Health', 'Health Education', 'Health Disparities'],
     description: 'Poster presented at the 2024 Health Disparities & Social Justice Poster Competition, University of Pittsburgh.',
+    pdf: '/Abre_los_Ojos_para_Escucharnos_VR_Poster.pdf',
     icon: '📊'
   }
 ];
