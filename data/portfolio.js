@@ -143,8 +143,29 @@ export const WORK_EXPERIENCE = [
 // IPPEs (Introductory Pharmacy Practice Experiences)
 export const IPPES = [
   {
+    id: 'upmc-presbyterian-health-system',
+    title: 'Health System Hospital Foundations & Direct Patient Care',
+    organization: 'UPMC Presbyterian Hospital',
+    category: 'Health System',
+    description: 'Two-week immersive IPPE at UPMC Presbyterian covering both foundational hospital pharmacy operations and direct patient care across neurosurgery and spinal surgery units (6D, 8D, 9N, 10N). Developed clinical skills in post-operative medication management, discharge counseling, and medication reconciliation while navigating the Cerner EHR system. In week two, took greater ownership of patient cases and trained APPE students on Cerner workflows, developing leadership and teaching skills alongside clinical responsibilities.',
+    impact: [
+      'Reviewed post-operative medications by evaluating clinical status, medication history, and treatment plans',
+      'Counseled patients on discharge medications, translating complex regimens into clear guidance',
+      'Navigated Cerner EHR to access medication histories, active orders, and key clinical data',
+      'Trained two APPE students on Cerner workflows, reinforcing clinical knowledge through teaching',
+      'Collaborated with pharmacists, physicians, and nurses across four inpatient units',
+      'Explored UPMC\'s Cerner-to-Epic EHR transition and its implications for pharmacy informatics'
+    ],
+    technologies: ['Cerner EHR', 'Medication Reconciliation', 'Discharge Counseling', 'Interprofessional Collaboration', 'Health Informatics'],
+    icon: '🏨',
+    color: 'blue',
+    period: 'Mar 2026',
+    hours: '80 hours',
+    location: 'Pittsburgh, PA'
+  },
+  {
     id: 'carepath-home-infusion',
-    title: 'Health Systems Specialized Services',
+    title: 'Health System Specialized Services',
     organization: 'CarePathRx Home Infusion (Chartwell)',
     category: 'Specialty Services',
     description: 'Collaborated with pharmacists and leadership to observe workflow and safety processes in home infusion services. Explored innovations in patient monitoring and presented an independent project connecting pharmacy practice with emerging technologies.',
