@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'media', // Changed from 'class' to 'media'
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -22,12 +22,27 @@ module.exports = {
         ],
       },
       colors: {
-        blue: {
-          600: '#2563eb',
+        pine: {
+          400: '#3d5c42',
+          600: '#2D4530',
+          900: '#1a2e1c',
         },
-        gray: {
-          800: '#1f2937',
-          900: '#111827',
+        slate: {
+          400: '#8a9aa4',
+          600: '#6B7B84',
+        },
+        sand: {
+          100: '#EEE9DA',
+          200: '#E1DBC9',
+          300: '#C8C2AD',
+        },
+        brown: {
+          600: '#5E4B3B',
+        },
+        charcoal: {
+          700: '#2E2E2E',
+          800: '#252525',
+          900: '#1C1C1C',
         },
       },
     },
@@ -36,4 +51,3 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 };
-

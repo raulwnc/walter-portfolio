@@ -30,14 +30,11 @@ const NAV_ITEMS = [
 ];
 
 const DropdownItem = ({ item, router }) => {
-  const handleDropdownClick = (href) => {
-    router.push(href);
-  };
+  const handleDropdownClick = (href) => { router.push(href); };
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   const isActive = router.pathname === item.path || router.pathname.startsWith(item.path + '/');
 
-  // Close on outside click
   useEffect(() => {
     const handler = (e) => {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
@@ -46,21 +43,19 @@ const DropdownItem = ({ item, router }) => {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Close on route change
   useEffect(() => { setOpen(false); }, [router.pathname]);
 
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none ${
-          isActive
-            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-        }`}
+        style={isActive ? { color: '#2D4530', backgroundColor: '#EEE9DA' } : {}}
+        className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none`}
       >
-        <span className="mr-1" aria-hidden="true">{item.icon}</span>
-        {item.label}
+        <span style={{ color: isActive ? '#2D4530' : '#4A5A4E' }} className="flex items-center gap-1">
+          <span className="mr-1" aria-hidden="true">{item.icon}</span>
+          {item.label}
+        </span>
         <svg
           className={`w-3 h-3 ml-0.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
@@ -76,13 +71,17 @@ const DropdownItem = ({ item, router }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 mt-1 w-52 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+            style={{ backgroundColor: '#EEE9DA', borderColor: '#C8C2AD' }}
+            className="absolute top-full left-0 mt-1 w-52 rounded-xl shadow-xl border overflow-hidden z-50"
           >
             {item.dropdown.map((di) => (
               <button
                 key={di.label}
                 onClick={() => { setOpen(false); handleDropdownClick(di.href); }}
-                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-left"
+                style={{ color: '#4A5A4E' }}
+                className="w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors text-left"
+                onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#E1DBC9'; e.currentTarget.style.color = '#2D4530'; }}
+                onMouseLeave={e => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#4A5A4E'; }}
               >
                 <span aria-hidden="true">{di.icon}</span>
                 {di.label}
@@ -119,19 +118,26 @@ const Layout = ({ children }) => {
   }, [router.pathname]);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
   const toggleMobileExpand = (id) => {
     setMobileExpanded(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div style={{ backgroundColor: '#E1DBC9' }} className="min-h-screen" suppressHydrationWarning>
+
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+      <header
+        className="sticky top-0 z-50 border-b"
+        style={{ backgroundColor: '#EEE9DA', borderColor: '#C8C2AD' }}
+      >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+            <Link
+              href="/"
+              className="text-xl font-bold transition-colors"
+              style={{ color: '#2D4530' }}
+            >
               {PERSONAL_INFO.name}
             </Link>
 
@@ -141,19 +147,20 @@ const Layout = ({ children }) => {
                 if (item.dropdown) {
                   return <DropdownItem key={item.id} item={item} router={router} />;
                 }
+                const isActive = router.pathname === item.path;
+                const isLife = item.special;
                 return (
                   <Link
                     key={item.id}
                     href={item.path}
-                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      item.special
-                        ? router.pathname.startsWith('/life')
-                          ? 'text-orange-600 dark:text-orange-400 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30'
-                          : 'text-orange-600 dark:text-orange-400 hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 dark:hover:from-orange-900/30 dark:hover:to-amber-900/30'
-                        : router.pathname === item.path
-                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                    }`}
+                    className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
+                    style={
+                      isLife
+                        ? { color: '#5E4B3B' }
+                        : isActive
+                        ? { color: '#2D4530', backgroundColor: '#E1DBC9' }
+                        : { color: '#4A5A4E' }
+                    }
                   >
                     <span className="mr-2" aria-hidden="true">{item.icon}</span>
                     {item.label}
@@ -165,7 +172,8 @@ const Layout = ({ children }) => {
             {/* Mobile hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="md:hidden p-2 rounded-lg transition-colors"
+              style={{ color: '#4A5A4E' }}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <motion.div animate={isMenuOpen ? 'open' : 'closed'} className="w-6 h-5 flex flex-col justify-between">
@@ -193,11 +201,8 @@ const Layout = ({ children }) => {
                         <div key={item.id}>
                           <button
                             onClick={() => toggleMobileExpand(item.id)}
-                            className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                              router.pathname === item.path
-                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                            }`}
+                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors"
+                            style={router.pathname === item.path ? { color: '#2D4530', backgroundColor: '#E1DBC9' } : { color: '#4A5A4E' }}
                           >
                             <span>
                               <span className="mr-3" aria-hidden="true">{item.icon}</span>
@@ -217,13 +222,15 @@ const Layout = ({ children }) => {
                                 animate={{ height: 'auto', opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.15 }}
-                                className="overflow-hidden ml-4 pl-3 border-l-2 border-gray-200 dark:border-gray-700 mt-1 space-y-1"
+                                className="overflow-hidden ml-4 pl-3 mt-1 space-y-1"
+                                style={{ borderLeft: '2px solid #C8C2AD' }}
                               >
                                 {item.dropdown.map((di) => (
                                   <button
                                     key={di.label}
                                     onClick={() => { setIsMenuOpen(false); router.push(di.href); }}
-                                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-left"
+                                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors text-left"
+                                    style={{ color: '#6B7B84' }}
                                   >
                                     <span aria-hidden="true">{di.icon}</span>
                                     {di.label}
@@ -239,15 +246,14 @@ const Layout = ({ children }) => {
                       <Link
                         key={item.id}
                         href={item.path}
-                        className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                        className="block px-4 py-3 rounded-lg text-sm font-medium transition-colors"
+                        style={
                           item.special
-                            ? router.pathname.startsWith('/life')
-                              ? 'text-orange-600 dark:text-orange-400 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30'
-                              : 'text-orange-600 dark:text-orange-400 hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 dark:hover:from-orange-900/30 dark:hover:to-amber-900/30'
+                            ? { color: '#5E4B3B' }
                             : router.pathname === item.path
-                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                        }`}
+                            ? { color: '#2D4530', backgroundColor: '#E1DBC9' }
+                            : { color: '#4A5A4E' }
+                        }
                       >
                         <span className="mr-3" aria-hidden="true">{item.icon}</span>
                         {item.label}
@@ -265,21 +271,21 @@ const Layout = ({ children }) => {
       <main className="min-h-screen">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 dark:text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#1E2E20' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-white dark:text-gray-100 font-bold text-lg mb-3">{PERSONAL_INFO.name}</h3>
-              <p className="text-sm text-gray-400 dark:text-gray-500 leading-relaxed">
+              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>{PERSONAL_INFO.name}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#8A9A8A' }}>
                 {PERSONAL_INFO.title} at {PERSONAL_INFO.school}, bridging pharmacy and technology to create innovative healthcare solutions.
               </p>
             </div>
             <div>
-              <h3 className="text-white dark:text-gray-100 font-bold text-lg mb-3">Quick Links</h3>
+              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>Quick Links</h3>
               <ul className="space-y-2">
                 {NAV_ITEMS.slice(1).map((item) => (
                   <li key={item.id}>
-                    <Link href={item.path} className="text-sm text-gray-400 dark:text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors">
+                    <Link href={item.path} className="text-sm transition-colors" style={{ color: '#8A9A8A' }}>
                       {item.label}
                     </Link>
                   </li>
@@ -287,7 +293,7 @@ const Layout = ({ children }) => {
               </ul>
             </div>
             <div>
-              <h3 className="text-white dark:text-gray-100 font-bold text-lg mb-3">Connect</h3>
+              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>Connect</h3>
               <div className="space-y-3">
                 {SOCIAL_LINKS.map((link) => (
                   <a
@@ -295,26 +301,33 @@ const Layout = ({ children }) => {
                     href={link.url}
                     target={link.name !== 'Email' ? '_blank' : undefined}
                     rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors"
+                    className="flex items-center gap-2 text-sm transition-colors"
+                    style={{ color: '#8A9A8A' }}
                   >
                     <span aria-hidden="true">{link.icon}</span>
                     {link.name}
                   </a>
                 ))}
-                <a href={PERSONAL_INFO.cv} download className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors">
+                <a
+                  href={PERSONAL_INFO.cv}
+                  download
+                  className="flex items-center gap-2 text-sm transition-colors"
+                  style={{ color: '#8A9A8A' }}
+                >
                   <span aria-hidden="true">📄</span>
                   Download CV
                 </a>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 dark:border-gray-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-gray-500 dark:text-gray-600 text-center sm:text-left">
+          <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid #2D4530' }}>
+            <p className="text-xs text-center sm:text-left" style={{ color: '#6B7B84' }}>
               &copy; {new Date().getFullYear()} {FOOTER.copyright} | {FOOTER.tagline}
             </p>
             <motion.button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors px-3 py-2 rounded"
+              className="flex items-center gap-2 text-xs transition-colors px-3 py-2 rounded"
+              style={{ color: '#6B7B84' }}
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
               aria-label="Back to top"

@@ -27,14 +27,9 @@ const ConferencePopup = () => {
     setIsVisible(true);
   };
 
-  const handlePosterClick = () => {
-    handleClose();
-    window.location.href = '/research#apha-2026-poster';
-  };
-
   return (
     <>
-      {/* Floating button — shown after popup is dismissed */}
+      {/* Floating button */}
       <AnimatePresence>
         {hasBeenSeen && !isVisible && (
           <motion.button
@@ -43,10 +38,10 @@ const ConferencePopup = () => {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}
             onClick={handleReopen}
-            className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+            className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+            style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
             aria-label="Save contact"
           >
-            <span>📲</span>
             Save Contact
           </motion.button>
         )}
@@ -76,8 +71,8 @@ const ConferencePopup = () => {
             >
               <div className="bg-white dark:bg-gray-900 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden">
 
-                {/* Top accent bar */}
-                <div className="h-1.5 bg-gradient-to-r from-blue-600 to-purple-600" />
+                {/* Top accent bar — pine green */}
+                <div className="h-1.5" style={{ backgroundColor: '#2D4530' }} />
 
                 {/* Content */}
                 <div className="p-6 sm:p-8">
@@ -115,9 +110,9 @@ const ConferencePopup = () => {
                       href="/walter-nieves.vcf"
                       download="Walter_Nieves_Canabal.vcf"
                       onClick={handleClose}
-                      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-sm shadow-md"
+                      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 font-semibold rounded-xl transition-colors text-sm shadow-md"
+                      style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
                     >
-                      <span>📲</span>
                       Save to Contacts
                     </a>
                     <button

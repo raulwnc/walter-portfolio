@@ -8,13 +8,18 @@ import { ANIMATION_VARIANTS } from '../utils/constants';
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-blue-950/30 dark:via-gray-900 dark:to-purple-950/30 px-4 overflow-hidden">
+      <section
+        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
+        style={{ backgroundColor: '#E1DBC9' }}
+      >
         {/* Decorative Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 dark:bg-purple-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-200 dark:bg-pink-900/30 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-4000" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full animate-blob"
+            style={{ backgroundColor: '#2D4530', filter: 'blur(80px)', opacity: 0.08 }} />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full animate-blob animation-delay-2000"
+            style={{ backgroundColor: '#6B7B84', filter: 'blur(80px)', opacity: 0.08 }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full animate-blob animation-delay-4000"
+            style={{ backgroundColor: '#5E4B3B', filter: 'blur(80px)', opacity: 0.06 }} />
         </div>
 
         <div className="relative max-w-6xl mx-auto text-center">
@@ -23,11 +28,13 @@ export default function Home() {
             animate="visible"
             variants={ANIMATION_VARIANTS.staggerContainer}
           >
-            {/* Headshot - Added mt-12 on mobile for spacing from navbar */}
+            {/* Headshot */}
             <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-8 mt-12 sm:mt-0">
               <div className="relative w-32 h-32 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 rounded-full blur-lg opacity-30 dark:opacity-20 animate-pulse" />
-                <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+                <div className="absolute inset-0 rounded-full blur-lg opacity-20 animate-pulse"
+                  style={{ backgroundColor: '#2D4530' }} />
+                <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-xl"
+                  style={{ border: '4px solid #C8C2AD' }}>
                   <Image
                     src={PERSONAL_INFO.headshot}
                     alt={PERSONAL_INFO.name}
@@ -41,23 +48,25 @@ export default function Home() {
 
             <motion.h1
               variants={ANIMATION_VARIANTS.fadeInDown}
-              className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 dark:text-gray-100 mb-3 whitespace-nowrap"
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-3 whitespace-nowrap"
+              style={{ color: '#1E2E20' }}
             >
               {PERSONAL_INFO.name}
             </motion.h1>
 
             <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-6">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-2">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2" style={{ color: '#2D4530' }}>
                 {PERSONAL_INFO.tagline}
               </p>
-              <p className="text-xl sm:text-2xl text-blue-600 dark:text-blue-400 font-semibold">
+              <p className="text-xl sm:text-2xl font-semibold" style={{ color: '#6B7B84' }}>
                 {PERSONAL_INFO.subtitle}
               </p>
             </motion.div>
 
             <motion.p
               variants={ANIMATION_VARIANTS.fadeInUp}
-              className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+              className="text-lg sm:text-xl max-w-3xl mx-auto mb-8 leading-relaxed"
+              style={{ color: '#4A5A4E' }}
             >
               {PERSONAL_INFO.description}
             </motion.p>
@@ -76,7 +85,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium italic">
+              <span className="text-sm sm:text-base font-medium italic" style={{ color: '#6B7B84' }}>
                 {PERSONAL_INFO.heritage}
               </span>
             </motion.div>
@@ -86,18 +95,20 @@ export default function Home() {
               variants={ANIMATION_VARIANTS.fadeInUp}
               className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12"
             >
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Students Mentored</div>
-              </div>
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400">10K+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Campaign Reach</div>
-              </div>
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400">4</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Research Projects</div>
-              </div>
+              {[
+                { value: '50+', label: 'Students Mentored', color: '#2D4530' },
+                { value: '10K+', label: 'Campaign Reach', color: '#6B7B84' },
+                { value: '4', label: 'Research Projects', color: '#5E4B3B' },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="p-4 rounded-xl"
+                  style={{ backgroundColor: '#EEE9DA', border: '0.5px solid #C8C2AD' }}
+                >
+                  <div className="text-3xl font-bold" style={{ color: stat.color }}>{stat.value}</div>
+                  <div className="text-sm" style={{ color: '#6A6050' }}>{stat.label}</div>
+                </div>
+              ))}
             </motion.div>
 
             {/* Featured Areas */}
@@ -105,41 +116,28 @@ export default function Home() {
               variants={ANIMATION_VARIANTS.fadeInUp}
               className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
             >
-              <Link href="/about" className="group">
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border-2 border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl mb-3">💊</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    Clinical Expertise
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Patient care, CMRs, and clinical operations across diverse settings
-                  </p>
-                </div>
-              </Link>
-
-              <Link href="/experience" className="group">
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl mb-3">💻</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    Technical Innovation
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Power BI, Azure, VR, and digital health product development
-                  </p>
-                </div>
-              </Link>
-
-              <Link href="/leadership" className="group">
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border-2 border-orange-200 dark:border-orange-700 hover:border-orange-400 dark:hover:border-orange-500 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl mb-3">👥</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                    Leadership Impact
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Mentoring 50+ students and driving DEI initiatives
-                  </p>
-                </div>
-              </Link>
+              {[
+                { href: '/about', icon: '💊', title: 'Clinical Expertise', desc: 'Patient care, CMRs, and clinical operations across diverse settings', accent: '#2D4530' },
+                { href: '/experience', icon: '💻', title: 'Technical Innovation', desc: 'Power BI, Azure, VR, and digital health product development', accent: '#6B7B84' },
+                { href: '/leadership', icon: '👥', title: 'Leadership Impact', desc: 'Mentoring 50+ students and driving DEI initiatives', accent: '#5E4B3B' },
+              ].map((card) => (
+                <Link href={card.href} key={card.title} className="group">
+                  <div
+                    className="p-6 rounded-xl transition-all duration-300 hover:shadow-xl"
+                    style={{ backgroundColor: '#EEE9DA', border: `2px solid ${card.accent}33` }}
+                    onMouseEnter={e => e.currentTarget.style.borderColor = card.accent}
+                    onMouseLeave={e => e.currentTarget.style.borderColor = `${card.accent}33`}
+                  >
+                    <div className="text-4xl mb-3">{card.icon}</div>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#1E2E20' }}>
+                      {card.title}
+                    </h3>
+                    <p className="text-sm" style={{ color: '#6A6050' }}>
+                      {card.desc}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </motion.div>
 
             {/* CTA Buttons */}
@@ -149,7 +147,8 @@ export default function Home() {
             >
               <Link href="/about">
                 <motion.button
-                  className="px-8 py-4 bg-blue-600 dark:bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 font-semibold rounded-lg shadow-lg transition-all duration-200"
+                  style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -162,7 +161,8 @@ export default function Home() {
                 download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-semibold rounded-lg border-2 border-blue-600 dark:border-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
+                className="px-8 py-4 font-semibold rounded-lg border-2 shadow-md transition-all duration-200"
+                style={{ backgroundColor: 'transparent', color: '#6B7B84', borderColor: '#6B7B84' }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -171,7 +171,8 @@ export default function Home() {
 
               <Link href="/contact">
                 <motion.button
-                  className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 font-semibold rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg"
+                  className="px-8 py-4 font-semibold rounded-lg border-2 shadow-md transition-all duration-200"
+                  style={{ backgroundColor: 'transparent', color: '#4A5A4E', borderColor: '#C8C2AD' }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -185,28 +186,14 @@ export default function Home() {
 
         <style jsx>{`
           @keyframes blob {
-            0%, 100% {
-              transform: translate(0, 0) scale(1);
-            }
-            25% {
-              transform: translate(20px, -20px) scale(1.1);
-            }
-            50% {
-              transform: translate(-20px, 20px) scale(0.9);
-            }
-            75% {
-              transform: translate(20px, 20px) scale(1.05);
-            }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 20px) scale(1.05); }
           }
-          .animate-blob {
-            animation: blob 7s infinite;
-          }
-          .animation-delay-2000 {
-            animation-delay: 2s;
-          }
-          .animation-delay-4000 {
-            animation-delay: 4s;
-          }
+          .animate-blob { animation: blob 7s infinite; }
+          .animation-delay-2000 { animation-delay: 2s; }
+          .animation-delay-4000 { animation-delay: 4s; }
         `}</style>
       </section>
     </Layout>

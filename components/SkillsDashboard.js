@@ -7,9 +7,8 @@ const SKILLS_DATA = {
     {
       id: 'patient-care',
       name: 'Patient Care & Counseling',
-      proficiency: 85,
       icon: '💊',
-      color: 'blue',
+      color: 'pine',
       projects: '100+',
       evidence: [
         'Rite Aid IPPE: 120 hours of CMRs and patient counseling',
@@ -23,9 +22,8 @@ const SKILLS_DATA = {
     {
       id: 'clinical-operations',
       name: 'Clinical Operations & Systems',
-      proficiency: 80,
       icon: '🏥',
-      color: 'blue',
+      color: 'pine',
       evidence: [
         'CVS & Rite Aid: Proficient in pharmacy management systems',
         'Workflow optimization in high-volume retail settings',
@@ -38,9 +36,8 @@ const SKILLS_DATA = {
     {
       id: 'drug-info',
       name: 'Drug Information & Research',
-      proficiency: 90,
       icon: '🔬',
-      color: 'blue',
+      color: 'pine',
       projects: '4',
       evidence: [
         'Drug metabolism research with Dr. Christian Fernandez',
@@ -54,9 +51,8 @@ const SKILLS_DATA = {
     {
       id: 'community-health',
       name: 'Community Health & Prevention',
-      proficiency: 85,
       icon: '🤝',
-      color: 'blue',
+      color: 'pine',
       reach: '10,000+',
       evidence: [
         'COACH Volunteer (UPMC Heart & Vascular): Cardiovascular health',
@@ -73,9 +69,8 @@ const SKILLS_DATA = {
     {
       id: 'data-viz',
       name: 'Data Visualization & Analytics',
-      proficiency: 90,
       icon: '📊',
-      color: 'purple',
+      color: 'slate',
       projects: '3+',
       evidence: [
         'RareMed Solutions: Built Power BI dashboards for specialty pharmacy',
@@ -88,9 +83,8 @@ const SKILLS_DATA = {
     {
       id: 'cloud-ai',
       name: 'Cloud & AI Technologies',
-      proficiency: 75,
       icon: '☁️',
-      color: 'purple',
+      color: 'slate',
       evidence: [
         'RareMed Solutions: Designed Microsoft Azure Speech Services system',
         'Healthcare communication enhancement through AI',
@@ -102,9 +96,8 @@ const SKILLS_DATA = {
     {
       id: 'vr-tech',
       name: 'Virtual Reality & Immersive Tech',
-      proficiency: 70,
       icon: '🥽',
-      color: 'purple',
+      color: 'slate',
       duration: 'Jan 2024 - April 2025',
       evidence: [
         'Developed VR cases using SimX for medication counseling',
@@ -118,9 +111,8 @@ const SKILLS_DATA = {
     {
       id: 'product-dev',
       name: 'Digital Health Product Development',
-      proficiency: 80,
       icon: '💻',
-      color: 'purple',
+      color: 'slate',
       team: '3',
       evidence: [
         'Leading digital health innovation project',
@@ -136,9 +128,8 @@ const SKILLS_DATA = {
     {
       id: 'team-building',
       name: 'Team Building & Mentorship',
-      proficiency: 85,
       icon: '👥',
-      color: 'orange',
+      color: 'brown',
       mentored: '50+',
       evidence: [
         'ALPFA Vice President: Built partnerships, grew membership 60%',
@@ -153,9 +144,8 @@ const SKILLS_DATA = {
     {
       id: 'public-speaking',
       name: 'Public Speaking & Communication',
-      proficiency: 85,
       icon: '🎤',
-      color: 'orange',
+      color: 'brown',
       presentations: '3',
       evidence: [
         'Capstone: FDA Guidance on Remote Patient Monitoring (April 2025)',
@@ -170,9 +160,8 @@ const SKILLS_DATA = {
     {
       id: 'research-writing',
       name: 'Research & Scientific Writing',
-      proficiency: 80,
       icon: '✍️',
-      color: 'orange',
+      color: 'brown',
       abstracts: '3',
       evidence: [
         '3 abstracts written across research projects',
@@ -187,9 +176,8 @@ const SKILLS_DATA = {
     {
       id: 'community-advocacy',
       name: 'Community Engagement & Advocacy',
-      proficiency: 90,
       icon: '🌍',
-      color: 'orange',
+      color: 'brown',
       evidence: [
         'APhA-ASP International VP: Global health initiatives',
         'Casa San Jose: Medical orientation for Latino community',
@@ -205,9 +193,8 @@ const SKILLS_DATA = {
     {
       id: 'healthcare-tech',
       name: 'Healthcare-Tech Translation',
-      proficiency: 85,
       icon: '🔄',
-      color: 'green',
+      color: 'pine',
       evidence: [
         'Bridging clinical pharmacy with product development at RareMed',
         'Translating regulatory data into actionable insights at FDA',
@@ -220,9 +207,8 @@ const SKILLS_DATA = {
     {
       id: 'project-mgmt',
       name: 'Project Management',
-      proficiency: 80,
       icon: '📋',
-      color: 'green',
+      color: 'pine',
       team: '3',
       evidence: [
         'Leading 3-person team on digital health project',
@@ -236,31 +222,14 @@ const SKILLS_DATA = {
   ]
 };
 
-const SkillCard = ({ skill, index, onExpand }) => {
-  const colorClasses = {
-    blue: {
-      bg: 'from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20',
-      border: 'border-blue-200 dark:border-blue-700 hover:border-blue-400 dark:hover:border-blue-500',
-      text: 'text-blue-600 dark:text-blue-400'
-    },
-    purple: {
-      bg: 'from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20',
-      border: 'border-purple-200 dark:border-purple-700 hover:border-purple-400 dark:hover:border-purple-500',
-      text: 'text-purple-600 dark:text-purple-400'
-    },
-    orange: {
-      bg: 'from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20',
-      border: 'border-orange-200 dark:border-orange-700 hover:border-orange-400 dark:hover:border-orange-500',
-      text: 'text-orange-600 dark:text-orange-400'
-    },
-    green: {
-      bg: 'from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20',
-      border: 'border-green-200 dark:border-green-700 hover:border-green-400 dark:hover:border-green-500',
-      text: 'text-green-600 dark:text-green-400'
-    }
-  };
+const COLOR_MAP = {
+  pine:  { border: '#2D4530' },
+  slate: { border: '#6B7B84' },
+  brown: { border: '#5E4B3B' },
+};
 
-  const colors = colorClasses[skill.color];
+const SkillCard = ({ skill, index, onExpand }) => {
+  const c = COLOR_MAP[skill.color] || COLOR_MAP.pine;
 
   return (
     <motion.div
@@ -269,69 +238,36 @@ const SkillCard = ({ skill, index, onExpand }) => {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className={`bg-gradient-to-br ${colors.bg} border-2 ${colors.border} p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-gray-900/50 transition-all duration-300 cursor-pointer`}
+      className="!bg-[#EEE9DA] p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+      style={{ border: `2px solid ${c.border}33` }}
       onClick={() => onExpand(skill)}
+      onMouseEnter={e => e.currentTarget.style.borderColor = c.border}
+      onMouseLeave={e => e.currentTarget.style.borderColor = `${c.border}33`}
     >
       <div className="flex items-start gap-3 mb-4">
         <span className="text-3xl" aria-hidden="true">{skill.icon}</span>
         <div className="flex-1">
-          <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2">
-            {skill.name}
-          </h3>
+          <h3 className="text-base font-bold mb-2" style={{ color: '#1E2E20' }}>{skill.name}</h3>
         </div>
       </div>
 
-
       <div className="flex flex-wrap gap-2 mb-3">
-
-        {skill.projects && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            📊 {skill.projects} projects
-          </span>
-        )}
-        {skill.mentored && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            👥 {skill.mentored} mentored
-          </span>
-        )}
-        {skill.presentations && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            🎤 {skill.presentations} talks
-          </span>
-        )}
-        {skill.abstracts && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            ✍️ {skill.abstracts} abstracts
-          </span>
-        )}
-        {skill.team && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            👥 {skill.team}-person team
-          </span>
-        )}
-        {skill.reach && (
-          <span className="px-2 py-1 bg-white/60 dark:bg-gray-800/60 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-            📢 {skill.reach} reach
-          </span>
-        )}
+        {skill.projects && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>📊 {skill.projects} projects</span>}
+        {skill.mentored && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>👥 {skill.mentored} mentored</span>}
+        {skill.presentations && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>🎤 {skill.presentations} talks</span>}
+        {skill.abstracts && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>✍️ {skill.abstracts} abstracts</span>}
+        {skill.team && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>👥 {skill.team}-person team</span>}
+        {skill.reach && <span className="px-2 py-1 rounded-full text-xs font-medium" style={{ backgroundColor: '#C8C2AD44', color: '#4A5A4E' }}>📢 {skill.reach} reach</span>}
       </div>
 
-      <div className="text-xs text-gray-500 dark:text-gray-400 text-center mt-2">
-        Click to view details →
-      </div>
+      <div className="text-xs text-center mt-2" style={{ color: '#8A9A8A' }}>Click to view details →</div>
     </motion.div>
   );
 };
 
 const SkillModal = ({ skill, onClose }) => {
   if (!skill) return null;
-
-  const colorClasses = {
-    blue: 'from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700',
-    purple: 'from-purple-600 to-purple-800 dark:from-purple-500 dark:to-purple-700',
-    orange: 'from-orange-600 to-orange-800 dark:from-orange-500 dark:to-orange-700',
-    green: 'from-green-600 to-green-800 dark:from-green-500 dark:to-green-700'
-  };
+  const c = COLOR_MAP[skill.color] || COLOR_MAP.pine;
 
   return (
     <motion.div
@@ -345,37 +281,26 @@ const SkillModal = ({ skill, onClose }) => {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+        className="!bg-[#EEE9DA] rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={`bg-gradient-to-r ${colorClasses[skill.color]} p-6 text-white`}>
+        <div className="p-6 rounded-t-2xl" style={{ backgroundColor: c.border }}>
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
               <span className="text-4xl">{skill.icon}</span>
-              <div>
-                <h3 className="text-2xl font-bold mb-1">{skill.name}</h3>
-
-              </div>
+              <h3 className="text-2xl font-bold" style={{ color: '#E1DBC9' }}>{skill.name}</h3>
             </div>
-            <button
-              onClick={onClose}
-              className="text-white/80 hover:text-white text-2xl font-bold"
-              aria-label="Close modal"
-            >
-              ×
-            </button>
+            <button onClick={onClose} className="text-2xl font-bold opacity-80 hover:opacity-100" style={{ color: '#E1DBC9' }} aria-label="Close modal">×</button>
           </div>
         </div>
 
         <div className="p-6">
           <div className="mb-6">
-            <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
-              📋 Evidence & Experience
-            </h4>
+            <h4 className="text-lg font-bold mb-3" style={{ color: '#1E2E20' }}>📋 Evidence & Experience</h4>
             <ul className="space-y-2">
               {skill.evidence.map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  <span className="text-blue-600 dark:text-blue-400 mt-0.5">✓</span>
+                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#4A5A4E' }}>
+                  <span style={{ color: '#2D4530' }} className="mt-0.5">✓</span>
                   {item}
                 </li>
               ))}
@@ -383,67 +308,31 @@ const SkillModal = ({ skill, onClose }) => {
           </div>
 
           {skill.impact && (
-            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
-              <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-2">
-                🎯 Impact
-              </h4>
-              <p className="text-sm text-gray-700 dark:text-gray-300">{skill.impact}</p>
+            <div className="mb-6 p-4 rounded-lg !bg-[#E1DBC9]" style={{ border: '1px solid #C8C2AD' }}>
+              <h4 className="text-sm font-bold mb-2" style={{ color: '#1E2E20' }}>🎯 Impact</h4>
+              <p className="text-sm" style={{ color: '#4A5A4E' }}>{skill.impact}</p>
             </div>
           )}
 
           {(skill.services || skill.technologies || skill.audiences || skill.publications || skill.role || skill.duration) && (
             <div className="mb-6">
-              <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
-                ℹ️ Additional Details
-              </h4>
+              <h4 className="text-lg font-bold mb-3" style={{ color: '#1E2E20' }}>ℹ️ Additional Details</h4>
               <div className="space-y-2 text-sm">
-                {skill.services && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Services:</span> {skill.services}
-                  </p>
-                )}
-                {skill.technologies && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Technologies:</span> {skill.technologies}
-                  </p>
-                )}
-                {skill.audiences && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Audiences:</span> {skill.audiences}
-                  </p>
-                )}
-                {skill.publications && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Publications:</span> {skill.publications}
-                  </p>
-                )}
-                {skill.role && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Role:</span> {skill.role}
-                  </p>
-                )}
-                {skill.duration && (
-                  <p className="text-gray-700 dark:text-gray-300">
-                    <span className="font-semibold">Duration:</span> {skill.duration}
-                  </p>
-                )}
+                {skill.services && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Services:</span> {skill.services}</p>}
+                {skill.technologies && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Technologies:</span> {skill.technologies}</p>}
+                {skill.audiences && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Audiences:</span> {skill.audiences}</p>}
+                {skill.publications && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Publications:</span> {skill.publications}</p>}
+                {skill.role && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Role:</span> {skill.role}</p>}
+                {skill.duration && <p style={{ color: '#4A5A4E' }}><span className="font-semibold">Duration:</span> {skill.duration}</p>}
               </div>
             </div>
           )}
 
           <div className="flex gap-3">
-            <a
-              href={skill.link}
-              className="flex-1 px-4 py-2 bg-blue-600 dark:bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700 transition-colors font-semibold text-sm"
-              onClick={onClose}
-            >
+            <a href={skill.link} className="flex-1 px-4 py-2 text-center rounded-lg font-semibold text-sm transition-colors" style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }} onClick={onClose}>
               View Related Work →
             </a>
-            <a
-              href="/Walter_Nieves_Canabal_CV.pdf"
-              download
-              className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-center rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-semibold text-sm"
-            >
+            <a href="/Walter_Nieves_Canabal_CV.pdf" download className="px-4 py-2 text-center rounded-lg font-semibold text-sm transition-colors" style={{ backgroundColor: '#C8C2AD', color: '#1E2E20' }}>
               📄 Download CV
             </a>
           </div>
@@ -467,98 +356,74 @@ const SkillsDashboard = () => {
 
   const getSkillsToDisplay = () => {
     if (activeCategory === 'all') {
-      return [
-        ...SKILLS_DATA.clinical,
-        ...SKILLS_DATA.technical,
-        ...SKILLS_DATA.leadership,
-        ...SKILLS_DATA.bridge
-      ];
+      return [...SKILLS_DATA.clinical, ...SKILLS_DATA.technical, ...SKILLS_DATA.leadership, ...SKILLS_DATA.bridge];
     }
     return SKILLS_DATA[activeCategory] || [];
   };
 
-  const skillsToDisplay = getSkillsToDisplay();
-
   return (
-    <section id="skills-dashboard" className={`${LAYOUT.SECTION_PADDING} bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-950/30`}>
+    <section id="skills-dashboard" className={`${LAYOUT.SECTION_PADDING} !bg-[#EEE9DA]`}>
       <div className="max-w-7xl mx-auto">
-        <div>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Skills & Expertise
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mx-auto rounded-full mb-4" />
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Where Pharmacy Meets Technology: A unique blend of clinical expertise and technical innovation
-            </p>
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#1E2E20' }}>Skills & Expertise</h2>
+          <div className="!bg-[#2D4530] w-20 h-1 mx-auto rounded-full mb-4" />
+          <p className="text-lg max-w-3xl mx-auto" style={{ color: '#4A5A4E' }}>
+            Where Pharmacy Meets Technology: A unique blend of clinical expertise and technical innovation
+          </p>
+        </div>
 
-          <div className="mb-12">
-            <div className="flex flex-wrap justify-center gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
-                    activeCategory === category.id
-                      ? 'bg-blue-600 dark:bg-blue-600 text-white shadow-lg scale-105'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
-                  }`}
-                >
-                  <span className="mr-2" aria-hidden="true">{category.icon}</span>
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillsToDisplay.map((skill, index) => (
-              <SkillCard
-                key={skill.id}
-                skill={skill}
-                index={index}
-                onExpand={setExpandedSkill}
-              />
+        <div className="mb-12">
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className="px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+                style={
+                  activeCategory === category.id
+                    ? { backgroundColor: '#2D4530', color: '#E1DBC9', transform: 'scale(1.05)' }
+                    : { backgroundColor: '#E1DBC9', color: '#4A5A4E', border: '1px solid #C8C2AD' }
+                }
+              >
+                <span className="mr-2" aria-hidden="true">{category.icon}</span>
+                {category.label}
+              </button>
             ))}
           </div>
+        </div>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {getSkillsToDisplay().map((skill, index) => (
+            <SkillCard key={skill.id} skill={skill} index={index} onExpand={setExpandedSkill} />
+          ))}
+        </div>
 
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">50+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Students Mentored</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">10K+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Campaign Reach</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">4</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Research Projects</div>
-            </div>
+        <div className="!bg-[#E1DBC9] mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 p-8 rounded-2xl shadow-lg" style={{ border: '1px solid #C8C2AD' }}>
+          <div className="text-center">
+            <div className="text-3xl font-bold mb-1" style={{ color: '#2D4530' }}>50+</div>
+            <div className="text-sm" style={{ color: '#6A6050' }}>Students Mentored</div>
           </div>
-
-          <div
-            className="mt-8 p-6 rounded-2xl text-white text-center"
-            style={{ background: 'linear-gradient(to right, #2563eb, #9333ea)' }}
-          >
-            <h3 className="text-xl font-bold mb-2">🌉 The Bridge</h3>
-            <p className="text-sm opacity-90 max-w-2xl mx-auto">
-              My unique positioning at the intersection of pharmacy and technology allows me to translate
-              clinical needs into technical solutions and bring digital innovation to healthcare practice.
-            </p>
+          <div className="text-center">
+            <div className="text-3xl font-bold mb-1" style={{ color: '#6B7B84' }}>10K+</div>
+            <div className="text-sm" style={{ color: '#6A6050' }}>Campaign Reach</div>
           </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold mb-1" style={{ color: '#5E4B3B' }}>4</div>
+            <div className="text-sm" style={{ color: '#6A6050' }}>Research Projects</div>
+          </div>
+        </div>
+
+        <div className="mt-8 p-6 rounded-2xl text-center" style={{ backgroundColor: '#2D4530' }}>
+          <h3 className="text-xl font-bold mb-2" style={{ color: '#E1DBC9' }}>🌉 The Bridge</h3>
+          <p className="text-sm max-w-2xl mx-auto" style={{ color: '#C8C2AD' }}>
+            My unique positioning at the intersection of pharmacy and technology allows me to translate
+            clinical needs into technical solutions and bring digital innovation to healthcare practice.
+          </p>
         </div>
       </div>
 
       <AnimatePresence>
-        {expandedSkill && (
-          <SkillModal
-            skill={expandedSkill}
-            onClose={() => setExpandedSkill(null)}
-          />
-        )}
+        {expandedSkill && <SkillModal skill={expandedSkill} onClose={() => setExpandedSkill(null)} />}
       </AnimatePresence>
     </section>
   );
