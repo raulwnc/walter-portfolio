@@ -121,29 +121,16 @@ const PresentationCard = ({ presentation, index }) => {
           <p className="text-sm mb-3" style={{ color: '#4A5A4E' }}>{presentation.description}</p>
 
           {isApha && (
-            <div className="mb-4 p-4 rounded-lg space-y-2 !bg-[#E1DBC9]" style={{ border: '1px solid #C8C2AD' }}>
-              {[
-                { icon: '🏷️', text: <><strong style={{ color: '#1E2E20' }}>Posterboard #322</strong></> },
-                { icon: '🕐', text: <><strong style={{ color: '#1E2E20' }}>Saturday, March 28, 2026 · 1:00–3:00 PM</strong></> },
-                { icon: '📍', text: <><strong style={{ color: '#1E2E20' }}>Exhibit Hall J, Los Angeles Convention Center</strong></> },
-                { icon: '🎯', text: <><strong style={{ color: '#1E2E20' }}>Meet the Researchers Poster Session</strong></> },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="text-sm">{item.icon}</span>
-                  <p className="text-sm" style={{ color: '#4A5A4E' }}>{item.text}</p>
-                </div>
-              ))}
-              <div className="flex gap-3 mt-2">
-                <a
-                  href="/StepForwardRx_Poster.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
-                  style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
-                >
-                  <span>👁️</span> View Poster
-                </a>
-              </div>
+            <div className="mb-3">
+              <a
+                href="/StepForwardRx_Poster.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
+                style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
+              >
+                View Poster
+              </a>
             </div>
           )}
 
@@ -161,10 +148,10 @@ const PresentationCard = ({ presentation, index }) => {
               href={presentation.pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
+              className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
               style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
             >
-              <span>👁️</span> View PDF
+              View PDF
             </a>
           )}
         </div>
