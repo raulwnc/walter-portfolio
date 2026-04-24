@@ -5,7 +5,7 @@ import ConferencePopup from '../components/ConferencePopup';
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="bg-white text-gray-800 font-sans">
+    <div style={{ backgroundColor: '#E1DBC9', color: '#1E2E20' }} className="font-sans">
       <Head>
         {/* HTML Meta Tags */}
         <title>Walter Nieves-Canabal | PharmD Portfolio</title>
