@@ -50,7 +50,7 @@ const DropdownItem = ({ item, router }) => {
       <button
         onClick={() => setOpen(!open)}
         style={isActive ? { color: '#2D4530', backgroundColor: '#EEE9DA' } : {}}
-        className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none`}
+        className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none"
       >
         <span style={{ color: isActive ? '#2D4530' : '#4A5A4E' }} className="flex items-center gap-1">
           <span className="mr-1" aria-hidden="true">{item.icon}</span>
@@ -135,8 +135,7 @@ const Layout = ({ children }) => {
             {/* Logo */}
             <Link
               href="/"
-              className="text-xl font-bold transition-colors"
-              style={{ color: '#2D4530' }}
+              className="!text-[#2D4530] text-xl font-bold transition-colors"
             >
               {PERSONAL_INFO.name}
             </Link>
@@ -275,17 +274,17 @@ const Layout = ({ children }) => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>{PERSONAL_INFO.name}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#8A9A8A' }}>
+              <h3 className="font-bold text-lg mb-3 !text-[#E1DBC9]">{PERSONAL_INFO.name}</h3>
+              <p className="text-sm leading-relaxed !text-[#C8C2AD]">
                 {PERSONAL_INFO.title} at {PERSONAL_INFO.school}, bridging pharmacy and technology to create innovative healthcare solutions.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>Quick Links</h3>
+              <h3 className="font-bold text-lg mb-3 !text-[#E1DBC9]">Quick Links</h3>
               <ul className="space-y-2">
                 {NAV_ITEMS.slice(1).map((item) => (
                   <li key={item.id}>
-                    <Link href={item.path} className="text-sm transition-colors" style={{ color: '#8A9A8A' }}>
+                    <Link href={item.path} className="!text-[#C8C2AD] text-sm transition-colors hover:!text-[#E1DBC9]">
                       {item.label}
                     </Link>
                   </li>
@@ -293,7 +292,7 @@ const Layout = ({ children }) => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-3" style={{ color: '#E1DBC9' }}>Connect</h3>
+              <h3 className="font-bold text-lg mb-3 !text-[#E1DBC9]">Connect</h3>
               <div className="space-y-3">
                 {SOCIAL_LINKS.map((link) => (
                   <a
@@ -301,8 +300,7 @@ const Layout = ({ children }) => {
                     href={link.url}
                     target={link.name !== 'Email' ? '_blank' : undefined}
                     rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-2 text-sm transition-colors"
-                    style={{ color: '#8A9A8A' }}
+                    className="!text-[#C8C2AD] flex items-center gap-2 text-sm transition-colors hover:!text-[#E1DBC9]"
                   >
                     <span aria-hidden="true">{link.icon}</span>
                     {link.name}
@@ -311,8 +309,7 @@ const Layout = ({ children }) => {
                 <a
                   href={PERSONAL_INFO.cv}
                   download
-                  className="flex items-center gap-2 text-sm transition-colors"
-                  style={{ color: '#8A9A8A' }}
+                  className="!text-[#C8C2AD] flex items-center gap-2 text-sm transition-colors hover:!text-[#E1DBC9]"
                 >
                   <span aria-hidden="true">📄</span>
                   Download CV
@@ -321,13 +318,12 @@ const Layout = ({ children }) => {
             </div>
           </div>
           <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderTop: '1px solid #2D4530' }}>
-            <p className="text-xs text-center sm:text-left" style={{ color: '#6B7B84' }}>
+            <p className="text-xs text-center sm:text-left !text-[#8A9A8A]">
               &copy; {new Date().getFullYear()} {FOOTER.copyright} | {FOOTER.tagline}
             </p>
             <motion.button
               onClick={scrollToTop}
-              className="flex items-center gap-2 text-xs transition-colors px-3 py-2 rounded"
-              style={{ color: '#6B7B84' }}
+              className="!text-[#8A9A8A] flex items-center gap-2 text-xs transition-colors px-3 py-2 rounded hover:!text-[#C8C2AD]"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
               aria-label="Back to top"
