@@ -89,9 +89,9 @@ const PresentationCard = ({ presentation, index }) => {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
       className="!bg-[#EEE9DA] p-6 rounded-xl transition-all duration-300 hover:shadow-lg"
-      style={{ border: isApha ? '2px solid #2D4530' : '2px solid #C8C2AD' }}
-      onMouseEnter={e => e.currentTarget.style.borderColor = isApha ? '#2D4530' : '#6B7B84'}
-      onMouseLeave={e => e.currentTarget.style.borderColor = isApha ? '#2D4530' : '#C8C2AD'}
+      style={{ border: '2px solid #C8C2AD' }}
+      onMouseEnter={e => e.currentTarget.style.borderColor = '#6B7B84'}
+      onMouseLeave={e => e.currentTarget.style.borderColor = '#C8C2AD'}
     >
       <div className="flex items-start gap-4">
         <span className="text-3xl flex-shrink-0" aria-hidden="true">{presentation.icon}</span>
@@ -126,8 +126,7 @@ const PresentationCard = ({ presentation, index }) => {
                 href="/StepForwardRx_Poster.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
-                style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
+                className="!bg-[#2D4530] !text-[#E1DBC9] inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
               >
                 View Poster
               </a>
@@ -148,8 +147,7 @@ const PresentationCard = ({ presentation, index }) => {
               href={presentation.pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
-              style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
+              className="!bg-[#2D4530] !text-[#E1DBC9] inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg transition-colors"
             >
               View PDF
             </a>
