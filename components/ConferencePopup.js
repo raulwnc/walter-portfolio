@@ -90,19 +90,6 @@ const ConferencePopup = () => {
                     ×
                   </button>
 
-                  {/* Badge row with poster link */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full">
-                      APhA Annual 2026
-                    </span>
-                    <button
-                      onClick={handlePosterClick}
-                      className="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline transition-colors"
-                    >
-                      View Poster →
-                    </button>
-                  </div>
-
                   {/* Heading */}
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                     Let&apos;s Stay Connected 👋
