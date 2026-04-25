@@ -1,16 +1,76 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import { PERSONAL_INFO, CTA } from '../data/portfolio';
 import { ANIMATION_VARIANTS } from '../utils/constants';
+
+const TYPING_PHRASES = [
+  'Tech-Driven Pharmacist',
+  'Digital Health Innovator',
+];
+
+const TypingAnimation = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const phrase = TYPING_PHRASES[currentPhrase];
+
+    if (isPaused) {
+      const pauseTimer = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 2000);
+      return () => clearTimeout(pauseTimer);
+    }
+
+    if (!isDeleting && displayed.length < phrase.length) {
+      const timer = setTimeout(() => {
+        setDisplayed(phrase.slice(0, displayed.length + 1));
+      }, 80);
+      return () => clearTimeout(timer);
+    }
+
+    if (!isDeleting && displayed.length === phrase.length) {
+      setIsPaused(true);
+      return;
+    }
+
+    if (isDeleting && displayed.length > 0) {
+      const timer = setTimeout(() => {
+        setDisplayed(displayed.slice(0, -1));
+      }, 40);
+      return () => clearTimeout(timer);
+    }
+
+    if (isDeleting && displayed.length === 0) {
+      setIsDeleting(false);
+      setCurrentPhrase((prev) => (prev + 1) % TYPING_PHRASES.length);
+    }
+  }, [displayed, isDeleting, isPaused, currentPhrase]);
+
+  return (
+    <div className="h-12 flex items-center justify-center">
+      <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold" style={{ color: '#2D4530' }}>
+        {displayed}
+        <span
+          className="inline-block w-0.5 h-8 ml-1 align-middle animate-pulse"
+          style={{ backgroundColor: '#2D4530' }}
+        />
+      </span>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
     <Layout>
       <section
-        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
-        style={{ backgroundColor: '#E1DBC9' }}
+        className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden !bg-[#E1DBC9]"
       >
         {/* Decorative Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -46,23 +106,28 @@ export default function Home() {
               </div>
             </motion.div>
 
+            {/* Name */}
             <motion.h1
               variants={ANIMATION_VARIANTS.fadeInDown}
-              className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-3 whitespace-nowrap"
+              className="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 whitespace-nowrap"
               style={{ color: '#1E2E20' }}
             >
               {PERSONAL_INFO.name}
             </motion.h1>
 
+            {/* Typing Animation */}
+            <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-3">
+              <TypingAnimation />
+            </motion.div>
+
+            {/* Subtitle */}
             <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-6">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2" style={{ color: '#2D4530' }}>
-                {PERSONAL_INFO.tagline}
-              </p>
               <p className="text-xl sm:text-2xl font-semibold" style={{ color: '#6B7B84' }}>
                 {PERSONAL_INFO.subtitle}
               </p>
             </motion.div>
 
+            {/* Description */}
             <motion.p
               variants={ANIMATION_VARIANTS.fadeInUp}
               className="text-lg sm:text-xl max-w-3xl mx-auto mb-8 leading-relaxed"
