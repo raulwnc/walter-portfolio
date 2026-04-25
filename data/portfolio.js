@@ -489,7 +489,7 @@ export const LEADERSHIP = [
     id: 'rx-ambassador',
     organization: 'RxAmbassador Program',
     position: 'Co-President',
-    period: '2024 - Present',
+    period: '2024 - 2026',
     description: 'Leading outreach and mentorship efforts for prospective pharmacy students, conducting campus tours and hosting virtual information sessions nationwide.',
     responsibilities: [
       'Coordinate student recruitment and outreach initiatives',
@@ -506,7 +506,7 @@ export const LEADERSHIP = [
     id: 'apha-asp',
     organization: 'APhA-ASP (American Pharmacists Association)',
     position: 'International Vice President',
-    period: '2024 - Present',
+    period: '2024 - 2026',
     description: 'Promoting advocacy and collaboration among pharmacy students.',
     responsibilities: [
       'Coordinate global health initiatives',
@@ -521,7 +521,7 @@ export const LEADERSHIP = [
     id: 'alpfa',
     organization: 'ALPFA (Association of Latino Professionals For America)',
     position: 'Vice President',
-    period: '2023 - Present',
+    period: '2023 - 2026',
     description: 'Driving diversity, equity, and inclusion efforts while organizing professional development programming for Latino students.',
     responsibilities: [
       'Lead diversity and inclusion initiatives',
@@ -538,7 +538,7 @@ export const LEADERSHIP = [
     id: 'professional-dev-admin',
     organization: 'Professional Development Administration',
     position: 'Student Administrator',
-    period: '2024 - Present',
+    period: '2024 - 2026',
     description: 'Supporting professional development initiatives and administrative operations for pharmacy students.',
     responsibilities: [
       'Coordinate professional development events',
