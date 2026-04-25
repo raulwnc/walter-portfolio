@@ -110,7 +110,7 @@ const ConferencePopup = () => {
                       href="/walter-nieves.vcf"
                       download="Walter_Nieves_Canabal.vcf"
                       onClick={handleClose}
-                      className="flex-1 flex items-center justify-center gap-2 px-5 py-3 font-semibold rounded-xl transition-colors text-sm shadow-md"
+                      className="!bg-[#2D4530] !text-[#E1DBC9] flex-1 flex items-center justify-center gap-2 px-5 py-3 font-semibold rounded-xl transition-colors text-sm shadow-md"
                       style={{ backgroundColor: '#2D4530', color: '#E1DBC9' }}
                     >
                       Save to Contacts
