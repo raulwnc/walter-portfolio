@@ -9,6 +9,7 @@ import { ANIMATION_VARIANTS } from '../utils/constants';
 const TYPING_PHRASES = [
   'Tech-Driven Pharmacist',
   'Digital Health Innovator',
+  'Human-Centered Innovation',
 ];
 
 const TypingAnimation = () => {
@@ -116,15 +117,8 @@ export default function Home() {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-3">
-              <TypingAnimation />
-            </motion.div>
-
-            {/* Subtitle */}
             <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="mb-6">
-              <p className="text-xl sm:text-2xl font-semibold" style={{ color: '#6B7B84' }}>
-                {PERSONAL_INFO.subtitle}
-              </p>
+              <TypingAnimation />
             </motion.div>
 
             {/* Description */}
