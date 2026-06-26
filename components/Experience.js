@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { WORK_EXPERIENCE, IPPES, PROJECTS, FUTURE_APPES } from '../data/portfolio';
+import { WORK_EXPERIENCE, IPPES, PROJECTS, APPES } from '../data/portfolio';
 import { ANIMATION_VARIANTS, LAYOUT } from '../utils/constants';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -51,7 +51,18 @@ const ExperienceCard = ({ experience, index }) => {
         </div>
       </div>
 
-      <p className="mb-4 leading-relaxed" style={{ color: '#4A5A4E' }}>{experience.description}</p>
+      {Array.isArray(experience.description) ? (
+        <ul className="mb-4 space-y-1 list-none pl-0">
+          {experience.description.map((point, i) => (
+            <li key={i} className="flex gap-2 leading-relaxed text-sm" style={{ color: '#4A5A4E' }}>
+              <span className="mt-1 shrink-0">•</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mb-4 leading-relaxed" style={{ color: '#4A5A4E' }}>{experience.description}</p>
+      )}
 
       {experience.impact && (
         <div className="mb-4">
@@ -123,7 +134,7 @@ const Experience = () => {
     { id: 'work', label: 'Work Experience', icon: '💼', data: WORK_EXPERIENCE },
     { id: 'ippes', label: 'IPPEs', icon: '🏥', data: IPPES },
     { id: 'projects', label: 'Projects', icon: '🚀', data: PROJECTS },
-    { id: 'appes', label: 'Future APPEs', icon: '⭐', data: FUTURE_APPES }
+    { id: 'appes', label: 'APPEs', icon: '⭐', data: APPES }
   ];
 
   const activeData = tabs.find(tab => tab.id === activeTab)?.data || [];

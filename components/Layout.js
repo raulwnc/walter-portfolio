@@ -14,7 +14,7 @@ const NAV_ITEMS = [
       { label: 'Work Experience', icon: '💼', href: '/experience?tab=work' },
       { label: 'IPPEs', icon: '🏥', href: '/experience?tab=ippes' },
       { label: 'Projects', icon: '🚀', href: '/experience?tab=projects' },
-      { label: 'Future APPEs', icon: '⭐', href: '/experience?tab=appes' },
+      { label: 'APPEs', icon: '⭐', href: '/experience?tab=appes' },
     ]
   },
   {

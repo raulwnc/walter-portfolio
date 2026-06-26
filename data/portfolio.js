@@ -249,15 +249,22 @@ export const PROJECTS = [
 ];
 
 // Future APPEs (Advanced Pharmacy Practice Experiences)
-export const FUTURE_APPES = [
+export const APPES = [
   {
     id: 'appe-block-1',
     title: 'Hospital Pharmacy',
     organization: 'West Penn Hospital - Allegheny Health Network',
     preceptor: 'Jessica Butala',
     category: 'Institutional Pharmacy',
-    description: 'Advanced practice experience in hospital pharmacy focusing on acute care medication management, interdisciplinary collaboration, and clinical decision-making in the inpatient setting.',
-    status: 'Upcoming',
+    description: [
+      'Delivered case presentation on acute bilateral pulmonary embolism, covering risk stratification, anticoagulation selection, and transitions of care for a PESI Class IV patient',
+      'Authored drug information response on inpatient hypokalemia management including causes, ECG implications, and treatment selection',
+      'Completed ADR report distinguishing vancomycin infusion reaction from true allergy; completed medication error investigation on U-500 insulin concentration risk',
+      'Developed clinical reference handouts on extracorporeal photopheresis (ECP) and photodynamic therapy (Photofrin) for pharmacist and student use',
+      'Created two AI literacy educational tools distributed at the department pharmacy huddle — one for pharmacists on generative AI in hospital pharmacy, one for technicians on safe use boundaries',
+      'Attended USP and operations meeting with pharmacy, informatics, and IT leadership discussing Care.ai and IV room technology integration'
+    ],
+    status: 'Completed',
     icon: '🏥',
     color: 'blue',
     period: 'May 11 - Jun 12, 2026',
