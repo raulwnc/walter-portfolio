@@ -50,7 +50,7 @@ const DropdownItem = ({ item, router }) => {
       <button
         onClick={() => setOpen(!open)}
         style={isActive ? { color: '#2D4530', backgroundColor: '#EEE9DA' } : {}}
-        className="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none"
+        className="flex items-center gap-1 px-2 xl:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none whitespace-nowrap"
       >
         <span style={{ color: isActive ? '#2D4530' : '#4A5A4E' }} className="flex items-center gap-1">
           <span className="mr-1" aria-hidden="true">{item.icon}</span>
@@ -135,13 +135,13 @@ const Layout = ({ children }) => {
             {/* Logo */}
             <Link
               href="/"
-              className="!text-[#2D4530] text-xl font-bold transition-colors"
+              className="!text-[#2D4530] text-xl font-bold transition-colors whitespace-nowrap shrink-0"
             >
               {PERSONAL_INFO.name}
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
               {NAV_ITEMS.map((item) => {
                 if (item.dropdown) {
                   return <DropdownItem key={item.id} item={item} router={router} />;
@@ -152,7 +152,7 @@ const Layout = ({ children }) => {
                   <Link
                     key={item.id}
                     href={item.path}
-                    className="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200"
+                    className="px-2 xl:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap"
                     style={
                       isLife
                         ? { color: '#5E4B3B' }
@@ -171,7 +171,7 @@ const Layout = ({ children }) => {
             {/* Mobile hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors"
+              className="lg:hidden p-2 rounded-lg transition-colors"
               style={{ color: '#4A5A4E' }}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -191,7 +191,7 @@ const Layout = ({ children }) => {
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="md:hidden overflow-hidden pb-4"
+                className="lg:hidden overflow-hidden pb-4"
               >
                 <div className="space-y-1 pt-2">
                   {NAV_ITEMS.map((item) => {
