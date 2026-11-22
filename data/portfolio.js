@@ -120,26 +120,6 @@ export const WORK_EXPERIENCE = [
     location: 'Pittsburgh, PA'
   },
   {
-    id: 'cvs-ddat',
-    title: 'Digital Product Management',
-    organization: 'CVS Health - Digital, Data, Analytics & Technology (DDAT)',
-    category: 'Digital Health & Product',
-    description: 'Worked within CVS Health\'s DDAT organization on digital product management, combining hands-on data engineering with product discovery and stakeholder communication across the guest and prescription digital experience.',
-    impact: [
-      'Built a modular Python workflow transforming 12,754 interactions and 2,357 Action Required cases into a structured seven-sheet analysis, cutting more than three hours of manual analysis to minutes',
-      'Investigated CVS App and Mobile Web guest prescription journeys, identified cross-channel friction and a guest-access defect, and translated findings into defect-ready evidence, a proposed user story, and acceptance criteria that was added to the product backlog',
-      'Built and evaluated a two-agent AI model-selection MVP, achieving 9/10 strong recommendations in second-round testing through structured evaluation and human adjudication',
-      'Conducted week-over-week product performance, competitive, and business analyses to support product decision-making',
-      'Presented product, analytics, automation, AI, and digital journey findings to product, engineering, analytics, and leadership stakeholders'
-    ],
-    technologies: ['Python', 'Product Management', 'AI/Agentic Workflows', 'Product Analytics', 'Stakeholder Communication'],
-    status: 'Completed',
-    icon: '📱',
-    color: 'purple',
-    period: 'July - Aug 2026',
-    location: 'Remote'
-  },
-  {
     id: 'fda-fellowship',
     title: 'FDA Fellow',
     organization: 'U.S. Food and Drug Administration',
