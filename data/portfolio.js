@@ -120,6 +120,26 @@ export const WORK_EXPERIENCE = [
     location: 'Pittsburgh, PA'
   },
   {
+    id: 'cvs-ddat',
+    title: 'Digital Product Management',
+    organization: 'CVS Health - Digital, Data, Analytics & Technology (DDAT)',
+    category: 'Digital Health & Product',
+    description: 'Worked within CVS Health\'s DDAT organization on digital product management, combining hands-on data engineering with product discovery and stakeholder communication across the guest and prescription digital experience.',
+    impact: [
+      'Built a modular Python workflow transforming 12,754 interactions and 2,357 Action Required cases into a structured seven-sheet analysis, cutting more than three hours of manual analysis to minutes',
+      'Investigated CVS App and Mobile Web guest prescription journeys, identified cross-channel friction and a guest-access defect, and translated findings into defect-ready evidence, a proposed user story, and acceptance criteria that was added to the product backlog',
+      'Built and evaluated a two-agent AI model-selection MVP, achieving 9/10 strong recommendations in second-round testing through structured evaluation and human adjudication',
+      'Conducted week-over-week product performance, competitive, and business analyses to support product decision-making',
+      'Presented product, analytics, automation, AI, and digital journey findings to product, engineering, analytics, and leadership stakeholders'
+    ],
+    technologies: ['Python', 'Product Management', 'AI/Agentic Workflows', 'Product Analytics', 'Stakeholder Communication'],
+    status: 'Completed',
+    icon: '📱',
+    color: 'purple',
+    period: 'July - Aug 2026',
+    location: 'Remote'
+  },
+  {
     id: 'fda-fellowship',
     title: 'FDA Fellow',
     organization: 'U.S. Food and Drug Administration',
@@ -273,41 +293,57 @@ export const APPES = [
   {
     id: 'appe-block-2',
     title: 'Patient Care Elective - Specialty Pharmacy',
-    organization: 'CVS Health - Caremark Specialty',
+    organization: 'CVS Caremark Specialty',
     preceptor: 'Connie Constantino',
     category: 'Specialty Pharmacy',
-    description: 'Elective rotation in specialty pharmacy focusing on complex medication management, prior authorizations, and patient support programs for high-cost drug therapies.',
-    status: 'Upcoming',
+    description: [
+      'Engaged with digital health, AI, product, informatics, clinical, and operational leaders to understand how technology and workflow design affect specialty-pharmacy performance and patient engagement',
+      'Developed an accredited continuing-education program on biosimilars and a hepatitis B/C clinical resource supporting evidence-based specialty-pharmacy practice',
+      'Explored specialty pharmacy product development, digital workflows, user acceptance testing, and technology-enabled operational processes'
+    ],
+    status: 'Completed',
     icon: '💊',
     color: 'purple',
-    period: 'Jun 15 - Jul 17, 2026',
-    type: 'PC Elective'
+    period: 'June - July 2026',
+    type: 'PC Elective',
+    location: 'Monroeville, PA'
   },
   {
     id: 'appe-block-3',
-    title: 'Non-Patient Care Elective - Digital Health',
-    organization: 'CVS Digital Health (Virtual)',
+    title: 'Non-Patient Care Elective - Digital Product Management',
+    organization: 'CVS Health - Digital, Data, Analytics & Technology (DDAT)',
     preceptor: 'David Katz',
     category: 'Digital Health',
-    description: 'Virtual elective rotation exploring digital health strategy, pharmacy innovation, and technology-driven solutions at the intersection of pharmacy and healthcare technology.',
-    status: 'Upcoming',
+    description: [
+      'Built a modular Python workflow transforming 12,754 interactions and 2,357 Action Required cases into a structured seven-sheet analysis, cutting more than three hours of manual analysis to minutes',
+      'Investigated CVS App and Mobile Web guest prescription journeys, identified cross-channel friction and a guest-access defect, and translated findings into a proposed user story and acceptance criteria that was added to the product backlog',
+      'Built and evaluated a two-agent AI model-selection MVP, achieving 9/10 strong recommendations in second-round testing',
+      'Conducted week-over-week product performance, competitive, and business analyses to support product decision-making',
+      'Presented product, analytics, automation, AI, and digital journey findings to product, engineering, analytics, and leadership stakeholders'
+    ],
+    status: 'Completed',
     icon: '💻',
     color: 'purple',
-    period: 'Jul 20 - Aug 21, 2026',
-    type: 'Non-PC Elective'
+    period: 'July - Aug 2026',
+    type: 'Non-PC Elective',
+    location: 'Remote'
   },
   {
     id: 'appe-block-4',
     title: 'Community Pharmacy',
-    organization: 'Harris Teeter Pharmacy #043',
+    organization: 'Harris Teeter Pharmacy',
     preceptor: 'Bradley Lovelace',
     category: 'Community Pharmacy',
-    description: 'Advanced practice experience in community pharmacy focusing on comprehensive medication management, immunizations, patient counseling, and pharmacy operations.',
-    status: 'Upcoming',
+    description: [
+      'Participated in community pharmacy operations, medication dispensing, patient counseling, and pharmacist-led care',
+      'Gained additional perspective on retail workflow design, medication access, and patient experience in a second major community pharmacy organization'
+    ],
+    status: 'Completed',
     icon: '🏪',
     color: 'blue',
-    period: 'Aug 24 - Sep 25, 2026',
-    type: 'Core Rotation'
+    period: 'Aug - Sep 2026',
+    type: 'Core Rotation',
+    location: 'Raleigh, NC'
   },
   {
     id: 'appe-block-5',
@@ -315,25 +351,30 @@ export const APPES = [
     organization: 'VA Pittsburgh Healthcare System',
     preceptor: 'Allison Langland',
     category: 'Acute Care',
-    description: 'Advanced practice experience in acute care medicine at the VA, focusing on veterans health, critical care pharmacotherapy, and interdisciplinary patient management.',
-    status: 'Upcoming',
+    description: [
+      'Participated in evidence-based pharmacotherapy assessment and medication management for hospitalized veterans across acute-care services',
+      'Strengthened clinical decision-making, antimicrobial stewardship, monitoring, and interprofessional communication'
+    ],
+    status: 'Completed',
     icon: '🚑',
     color: 'red',
-    period: 'Sep 28 - Oct 30, 2026',
-    type: 'Core Rotation'
+    period: 'Sep - Oct 2026',
+    type: 'Core Rotation',
+    location: 'Pittsburgh, PA'
   },
   {
     id: 'appe-block-6',
     title: 'Ambulatory Care',
-    organization: 'Mosaic Pharmacy Service',
-    preceptor: 'Patricia Powers',
+    organization: 'Mosaic Pharmacy Services',
+    preceptor: 'Haley Baker',
     category: 'Ambulatory Care',
     description: 'Advanced practice experience in ambulatory care focusing on chronic disease state management, medication therapy management, and preventive care in an outpatient setting.',
     status: 'Upcoming',
     icon: '🩺',
     color: 'green',
-    period: 'Nov 2 - Dec 4, 2026',
-    type: 'Core Rotation'
+    period: 'Nov - Dec 2026',
+    type: 'Core Rotation',
+    location: 'Sterling, VA'
   },
   {
     id: 'appe-block-7',
@@ -345,8 +386,9 @@ export const APPES = [
     status: 'Upcoming',
     icon: '⚙️',
     color: 'orange',
-    period: 'Jan 4 - Feb 5, 2027',
-    type: 'Non-PC Elective'
+    period: 'Jan - Feb 2027',
+    type: 'Non-PC Elective',
+    location: 'Remote'
   },
   {
     id: 'appe-block-8',
@@ -358,8 +400,9 @@ export const APPES = [
     status: 'Upcoming',
     icon: '🩺',
     color: 'green',
-    period: 'Feb 8 - Mar 12, 2027',
-    type: 'Core Rotation'
+    period: 'Feb - Mar 2027',
+    type: 'Core Rotation',
+    location: 'San Juan, PR'
   }
 ];
 
@@ -453,6 +496,39 @@ export const PRESENTATIONS = [
     posterNumber: '#322'
   },
   {
+    id: 'biosimilars-cvs',
+    title: 'Understanding Biosimilars',
+    subtitle: 'From Basics to Clinical Practice',
+    type: 'Clinical Presentation',
+    date: 'July 2026',
+    audience: 'CVS Caremark Specialty',
+    topics: ['Biosimilars', 'Specialty Pharmacy', 'Clinical Education'],
+    description: 'Accredited continuing-education presentation developed during the CVS Caremark Specialty APPE, covering biosimilar fundamentals through clinical application.',
+    icon: '🧬'
+  },
+  {
+    id: 'west-penn-case-pe',
+    title: 'Patient Case Presentation',
+    subtitle: 'Acute Bilateral Pulmonary Embolism',
+    type: 'Case Presentation',
+    date: 'June 2026',
+    audience: 'West Penn Hospital Pharmacy & Clinical Staff',
+    topics: ['Pulmonary Embolism', 'Anticoagulation', 'Risk Stratification', 'Transitions of Care'],
+    description: 'Case presentation covering risk stratification, anticoagulation selection, and transitions of care for a PESI Class IV patient, delivered during the West Penn Hospital APPE.',
+    icon: '🫁'
+  },
+  {
+    id: 'tapinarof-vtama',
+    title: 'Tapinarof (VTAMA®) 1% Cream for Plaque Psoriasis',
+    subtitle: 'A Critical Evaluation of Phase 3 Clinical Trial Evidence',
+    type: 'Academic Seminar',
+    date: 'January 2026',
+    audience: 'Pharmacy Students, Faculty',
+    topics: ['Dermatology', 'Plaque Psoriasis', 'Clinical Trial Evaluation', 'Drug Evidence'],
+    description: 'Critical evaluation of Phase 3 clinical trial evidence supporting tapinarof cream for plaque psoriasis.',
+    icon: '🔬'
+  },
+  {
     id: 'capstone-rpm',
     title: 'The Future is Remote',
     subtitle: 'FDA Guidance & Regulatory Strategy for RPM in Drug Research',
@@ -496,7 +572,7 @@ export const LEADERSHIP = [
     id: 'rx-ambassador',
     organization: 'RxAmbassador Program',
     position: 'Co-President',
-    period: '2024 - 2026',
+    period: '2025 - 2026',
     description: 'Leading outreach and mentorship efforts for prospective pharmacy students, conducting campus tours and hosting virtual information sessions nationwide.',
     responsibilities: [
       'Coordinate student recruitment and outreach initiatives',
@@ -510,10 +586,40 @@ export const LEADERSHIP = [
     color: 'blue'
   },
   {
-    id: 'apha-asp',
+    id: 'professional-dev-admin',
+    organization: 'University of Pittsburgh School of Pharmacy',
+    position: 'Professional Student Development Administrator',
+    period: '2024 - Present',
+    description: 'Supporting professional development initiatives and administrative operations for pharmacy students.',
+    responsibilities: [
+      'Coordinate professional development events',
+      'Support administrative operations',
+      'Assist with strategic planning initiatives',
+      'Promote student advisor opportunities across the school'
+    ],
+    impact: 'Enhanced student participation in professional development events',
+    icon: '📋',
+    color: 'blue'
+  },
+  {
+    id: 'student-advisor',
+    organization: 'University of Pittsburgh School of Pharmacy',
+    position: 'Student Advisor',
+    period: '2024 - 2025',
+    description: 'Advised fellow PharmD students on coursework, rotations, and student life as part of the School of Pharmacy\'s peer advising program.',
+    responsibilities: [
+      'Advised students on academic and experiential planning',
+      'Served as a peer resource for incoming and current students'
+    ],
+    impact: 'Supported student success through consistent peer advising',
+    icon: '🧭',
+    color: 'blue'
+  },
+  {
+    id: 'apha-asp-vp',
     organization: 'APhA-ASP (American Pharmacists Association)',
     position: 'International Vice President',
-    period: '2024 - 2026',
+    period: '2025 - 2026',
     description: 'Promoting advocacy and collaboration among pharmacy students.',
     responsibilities: [
       'Coordinate global health initiatives',
@@ -525,10 +631,23 @@ export const LEADERSHIP = [
     color: 'green'
   },
   {
-    id: 'alpfa',
-    organization: 'ALPFA (Association of Latino Professionals For America)',
+    id: 'apha-asp-vp-elect',
+    organization: 'APhA-ASP (American Pharmacists Association)',
+    position: 'International Vice President-Elect',
+    period: '2024 - 2025',
+    description: 'Prepared to lead the chapter\'s international programming and advocacy initiatives.',
+    responsibilities: [
+      'Supported international programming planning',
+      'Assisted with global health initiative coordination'
+    ],
+    icon: '🌍',
+    color: 'green'
+  },
+  {
+    id: 'alpfa-vp',
+    organization: 'Association of Latino Professionals for America (ALPFA)',
     position: 'Vice President',
-    period: '2023 - 2026',
+    period: '2024 - 2026',
     description: 'Driving diversity, equity, and inclusion efforts while organizing professional development programming for Latino students.',
     responsibilities: [
       'Lead diversity and inclusion initiatives',
@@ -542,20 +661,17 @@ export const LEADERSHIP = [
     color: 'orange'
   },
   {
-    id: 'professional-dev-admin',
-    organization: 'Professional Development Administration',
-    position: 'Student Administrator',
-    period: '2024 - 2026',
-    description: 'Supporting professional development initiatives and administrative operations for pharmacy students.',
+    id: 'alpfa-secretary',
+    organization: 'Association of Latino Professionals for America (ALPFA)',
+    position: 'Secretary',
+    period: '2023 - 2024',
+    description: 'Managed chapter records and communications while supporting professional development programming.',
     responsibilities: [
-      'Coordinate professional development events',
-      'Support administrative operations',
-      'Assist with strategic planning initiatives',
-      'Promote student advisor opportunities across the school'
+      'Maintained chapter records and meeting minutes',
+      'Supported communications and event coordination'
     ],
-    impact: 'Enhanced student participation in professional development events',
-    icon: '📋',
-    color: 'blue'
+    icon: '🤝',
+    color: 'orange'
   }
 ];
 
